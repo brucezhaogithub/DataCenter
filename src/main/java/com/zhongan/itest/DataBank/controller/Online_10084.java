@@ -1,8 +1,9 @@
 package com.zhongan.itest.DataBank.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zhongan.itest.DataBank.util.CertinoUtil;
 
@@ -13,14 +14,14 @@ import com.zhongan.itest.DataBank.util.CertinoUtil;
 
 @Controller
 public class Online_10084 {
-  
-    @RequestMapping(value="/online_10084")
-    @ResponseBody
-    public String initData() {
-      
-      CertinoUtil certiNo = new CertinoUtil();
-      return "随机身份证号码：" + certiNo.getRandomCertiCode();
-      
-    }
+    
+  @RequestMapping("/online_10084")
+  public String online_10084(Map<String, String> model) {
+    
+    CertinoUtil certi = new CertinoUtil();
+    model.put("certi", certi.getRandomCertiCode());
+    return "online_10084";
+    
+  }
     
 }
