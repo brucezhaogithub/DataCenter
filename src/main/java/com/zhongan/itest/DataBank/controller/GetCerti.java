@@ -26,6 +26,7 @@ public class GetCerti {
   }
   
   // 获取女性身份证号
+  // 适用与女性特定疾病、母婴健康险等指定女性产品
   @RequestMapping("/GetFemaleCerti")
   public String getFemaleCerti(Map<String, String> model) {
     
@@ -36,21 +37,14 @@ public class GetCerti {
   }
   
   // 获取指定年龄范围身份证号
+  // 同时生成投保人及儿童身份证号
+  // 适用与未成年人重疾、儿童齿科等指定儿童产品
   @RequestMapping("/GetAgeCerti")
   public String getAgeCerti(Map<String, String> model, int minAge, int maxAge) {
     
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(minAge, maxAge));
-    return "GetCerti";
-    
-  }
-  
-  // 获取指定年龄范围女性身份证号
-  @RequestMapping("/GetAgeFemaleCerti")
-  public String getAgeFemaleCerti(Map<String, String> model, int minAge, int maxAge) {
-    
-    CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(minAge, maxAge, "female"));
+    model.put("certi", certi.getRandomCertiCode());
+    model.put("kid", certi.getRandomCertiCode(minAge, maxAge));
     return "GetCerti";
     
   }
