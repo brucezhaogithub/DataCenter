@@ -13,14 +13,14 @@ import com.zhongan.itest.DataBank.util.CertinoUtil;
  */
 
 @Controller
-public class Online_10084 {
+public class GetData {
     
-  @RequestMapping("/online_10084")
-  public String online_10084(Map<String, String> model) {
+  @RequestMapping("/GetData")
+  public String getData(Map<String, String> model) {
     
     CertinoUtil certi = new CertinoUtil();
     model.put("certi", certi.getRandomCertiCode());
-    return "online_10084";
+    return "getdata";
     
   }
     
