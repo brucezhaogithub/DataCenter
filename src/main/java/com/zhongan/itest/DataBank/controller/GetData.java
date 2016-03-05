@@ -20,7 +20,7 @@ public class GetData {
     
     CertinoUtil certi = new CertinoUtil();
     model.put("certi", certi.getRandomCertiCode());
-    return "getdata";
+    return "GetData";
     
   }
     
