@@ -1,0 +1,7 @@
+<html>
+    <body>
+        <!-- Velocity基本语法 http://pengenjing.iteye.com/blog/1829229 -->
+        <span>投保人证件号码：</span>
+        <span>$certi</span><br />
+    </body>
+</html>
