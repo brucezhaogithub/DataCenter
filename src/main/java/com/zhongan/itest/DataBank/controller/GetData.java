@@ -15,44 +15,96 @@ import com.zhongan.itest.DataBank.util.CertinoUtil;
 @Controller
 public class GetData {
   
-  // 航空意外险 数据初始化
+  // 航空意外险-本人
   @RequestMapping("/GetData_HKYW")
   public String GetData_HKYW(Map<String, String> model) {
     
     CertinoUtil certi = new CertinoUtil();
     model.put("certi", certi.getRandomCertiCode());
-    return "GetData_HKYW";
+    return "GetData";
     
   }
   
-  // 营运交通意外险 数据初始化
+  // 营运交通意外险-本人
   @RequestMapping("/GetData_YYJT")
   public String GetData_YYJT(Map<String, String> model) {
    
     CertinoUtil certi = new CertinoUtil();
     model.put("certi", certi.getRandomCertiCode());
-    return "GetData_YYJT";
+    return "GetData";
    
   }
   
-  //公共场所意外险 数据初始化
+  // 公共场所意外险-本人
   @RequestMapping("/GetData_GGCS")
   public String GetData_GGCS(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
     model.put("certi", certi.getRandomCertiCode());
-    return "GetData_GGCS";
+    return "GetData";
   
   }
   
-  //公共场所意外险 数据初始化
+  // 私家车意外险-本人
   @RequestMapping("/GetData_SJC")
   public String GetData_SJC(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
     model.put("certi", certi.getRandomCertiCode());
-    return "GetData_SJC";
+    return "GetData";
   
+  }
+  
+  // 成人重大疾病保险-本人
+  @RequestMapping("/GetData_CRZJ")
+  public String GetData_CRZJ(Map<String, String> model) {
+ 
+    CertinoUtil certi = new CertinoUtil();
+    model.put("certi", certi.getRandomCertiCode(18, 45));
+    return "GetData";
+ 
+  }
+  
+  // 女性特定疾病保险-本人
+  @RequestMapping("/GetData_NXJB")
+  public String GetData_NXJB(Map<String, String> model) {
+
+    CertinoUtil certi = new CertinoUtil();
+    model.put("certi", certi.getRandomCertiCode(18, 45, "female"));
+    return "GetData";
+
+  }
+  
+  // 未成年重大疾病保险-子女
+  @RequestMapping("/GetData_ETZJ")
+  public String GetData_ETZJ(Map<String, String> model) {
+  
+    CertinoUtil certi = new CertinoUtil();
+    model.put("certi", certi.getRandomCertiCode());
+    model.put("kid", certi.getRandomCertiCode(1, 17));
+    return "GetData";
+  
+  }
+  
+  // 儿童齿科医疗保险-子女
+  @RequestMapping("/GetData_ETCK")
+  public String GetData_ETCK(Map<String, String> model) {
+ 
+    CertinoUtil certi = new CertinoUtil();
+    model.put("certi", certi.getRandomCertiCode());
+    model.put("kid", certi.getRandomCertiCode(4, 15));
+    return "GetData";
+ 
+  }
+  
+  // 母婴健康保险-本人
+  @RequestMapping("/GetData_HYB")
+  public String GetData_HYB(Map<String, String> model) {
+
+    CertinoUtil certi = new CertinoUtil();
+    model.put("certi", certi.getRandomCertiCode(20, 35, "female"));
+    return "GetData";
+
   }
   
 }
