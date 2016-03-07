@@ -1,11 +1,11 @@
-package com.zhongan.DataBank.controller;
+package pers.wenzi.DataBank.controller;
 
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zhongan.DataBank.util.CertinoUtil;
+import pers.wenzi.DataBank.util.CertinoUtil;
 
 /**
  * 航空意外险测试数据初始化
