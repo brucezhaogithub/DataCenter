@@ -18,6 +18,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="src/main/resources/mybatis-config.xml"/>
+    <mapper resource="pers/wenzi/DataBank/mappers/PolicyMapper.xml" />
   </mappers>
 </configuration>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="pers.wenzi.DataBank.mappers.PolicyMapper">  
+  
+    <resultMap type="PolicyEntity" id="studentResultMap">  
+        <id property="studentID" column="STUDENT_ID"/>  
+        <result property="studentName" column="STUDENT_NAME"/>  
+        <result property="studentSex" column="STUDENT_SEX"/>  
+        <result property="studentBirthday" column="STUDENT_BIRTHDAY"/>  
+    </resultMap>  
+      
+    <!-- 根据policyNo查询policy_xx.policy_xxxx表中保单数据 -->  
+    <select id="QueryPolicy" parameterType="String" resultType="StudentEntity" resultMap="studentResultMap">  
+        <![CDATA[ 
+            SELECT * FROM policy_00.policy_0000 WHERE policy_no = #{policyNo} UNION
+            SELECT * FROM policy_00.policy_0001 WHERE policy_no = #{policyNo} UNION
+            SELECT * FROM policy_01.policy_0002 WHERE policy_no = #{policyNo} UNION
+            SELECT * FROM policy_01.policy_0003 WHERE policy_no = #{policyNo} 
+        ]]> 
+    </select>
+</mapper>
