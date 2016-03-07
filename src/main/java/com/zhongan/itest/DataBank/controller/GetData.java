@@ -150,8 +150,8 @@ public class GetData {
   }
   
   // 母婴健康保险-本人
-  @RequestMapping("/GetData_HYB")
-  public String GetData_HYB(Map<String, String> model) {
+  @RequestMapping("/GetData_MYJK")
+  public String GetData_MYJK(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
     model.put("certi", certi.getRandomCertiCode(20, 35, "female"));
