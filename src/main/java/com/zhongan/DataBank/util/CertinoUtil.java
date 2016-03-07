@@ -1,4 +1,4 @@
-package com.zhongan.itest.DataBank.util;
+package com.zhongan.DataBank.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
