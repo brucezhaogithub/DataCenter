@@ -72,6 +72,20 @@ public class GetData {
 
   }
   
+  //驴友旅行意外伤害保险-本人+父母+配偶+子女
+  @RequestMapping("/GetData_LYLX_4PERSON")
+  public String GetData_LYLX_4PERSON(Map<String, String> model) {
+
+    CertinoUtil certi = new CertinoUtil();
+    model.put("relation", "本人+父母+配偶+子女");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
+    model.put("parent", certi.getRandomCertiCode(40, 70));
+    model.put("spouse", certi.getRandomCertiCode(18, 65, "female"));
+    model.put("kid", certi.getRandomCertiCode(1, 18));
+    return "GetData";
+
+  }
+  
   // 航空意外险-本人
   @RequestMapping("/GetData_HKYW")
   public String GetData_HKYW(Map<String, String> model) {
