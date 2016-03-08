@@ -77,10 +77,10 @@ public class GetData {
   public String GetData_LYLX_4PERSON(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
-    model.put("relation", "本人+父母+配偶+子女");
+    model.put("relation", "本人+配偶+父母+子女");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
-    model.put("parent", certi.getRandomCertiCode(40, 70));
     model.put("spouse", certi.getRandomCertiCode(18, 65, "female"));
+    model.put("parent", certi.getRandomCertiCode(40, 70));
     model.put("kid", certi.getRandomCertiCode(1, 18));
     return "GetData";
 
