@@ -20,7 +20,8 @@ public class GetData {
   public String GetData_YHDS(Map<String, String> model) {
     
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 60));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
     return "GetData";
     
   }
@@ -30,7 +31,8 @@ public class GetData {
   public String GetData_DZFX(Map<String, String> model) {
    
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 70));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 70));
     return "GetData";
    
   }
@@ -40,7 +42,8 @@ public class GetData {
   public String GetData_FLFY(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 99));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 85));
     return "GetData";
   
   }
@@ -50,7 +53,8 @@ public class GetData {
   public String GetData_QZLX(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 65, "female"));
+    model.put("relation", "本人+子女");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 65, "female"));
     model.put("kid", certi.getRandomCertiCode(1, 18));
     return "GetData";
 
@@ -61,8 +65,9 @@ public class GetData {
   public String GetData_LYLX(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode());
-    model.put("kid", certi.getRandomCertiCode());
+    model.put("relation", "本人+子女");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
+    model.put("kid", certi.getRandomCertiCode(1, 18));
     return "GetData";
 
   }
@@ -72,7 +77,8 @@ public class GetData {
   public String GetData_HKYW(Map<String, String> model) {
     
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 70));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 70));
     return "GetData";
     
   }
@@ -82,7 +88,8 @@ public class GetData {
   public String GetData_YYJT(Map<String, String> model) {
    
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 65));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
     return "GetData";
    
   }
@@ -92,7 +99,8 @@ public class GetData {
   public String GetData_GGCS(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 65));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
     return "GetData";
   
   }
@@ -102,7 +110,8 @@ public class GetData {
   public String GetData_SJC(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode());
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
     return "GetData";
   
   }
@@ -112,7 +121,8 @@ public class GetData {
   public String GetData_CRZJ(Map<String, String> model) {
  
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 45));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 45));
     return "GetData";
  
   }
@@ -122,7 +132,8 @@ public class GetData {
   public String GetData_NXJB(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(18, 45, "female"));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 45, "female"));
     return "GetData";
 
   }
@@ -132,7 +143,8 @@ public class GetData {
   public String GetData_ETZJ(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode());
+    model.put("relation", "子女");
+    model.put("tbrCerti", certi.getRandomCertiCode());
     model.put("kid", certi.getRandomCertiCode(1, 17));
     return "GetData";
   
@@ -143,7 +155,8 @@ public class GetData {
   public String GetData_ETCK(Map<String, String> model) {
  
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode());
+    model.put("relation", "子女");
+    model.put("tbrCerti", certi.getRandomCertiCode());
     model.put("kid", certi.getRandomCertiCode(4, 15));
     return "GetData";
  
@@ -154,7 +167,8 @@ public class GetData {
   public String GetData_MYJK(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode(20, 35, "female"));
+    model.put("relation", "本人");
+    model.put("tbrCerti", certi.getRandomCertiCode(20, 35, "female"));
     return "GetData";
 
   }

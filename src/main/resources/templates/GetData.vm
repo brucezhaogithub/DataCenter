@@ -1,27 +1,25 @@
 <html>
     <body>
         <!-- Velocity基本语法 http://pengenjing.iteye.com/blog/1829229 -->
-        <span>本人证件号码：</span>
-        <span>$certi</span>
+        <span>与投保人关系：</span>
+        <span>$relation</span><br />
+        <span>投保人证件号码：</span>
+        <span>$tbrCerti</span><br />
         #if($spouse)
-        <br />
         <span>配偶证件号码：</span>
-        <span>$spouse</span>
+        <span>$spouse</span><br />
         #end
         #if($parent)
-        <br />
         <span>父母证件号码：</span>
-        <span>$parent</span>
+        <span>$parent</span><br />
         #end
         #if($kid)
-        <br />
         <span>子女证件号码：</span>
-        <span>$kid</span>
+        <span>$kid</span><br />
         #end
         #if($other)
-        <br />
         <span>其他证件号码：</span>
-        <span>$other</span>
+        <span>$other</span><br />
         #end
     </body>
 </html>
