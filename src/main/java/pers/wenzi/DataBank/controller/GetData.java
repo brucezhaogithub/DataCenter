@@ -72,7 +72,7 @@ public class GetData {
   public String GetData_HKYW(Map<String, String> model) {
     
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode());
+    model.put("certi", certi.getRandomCertiCode(18, 70));
     return "GetData";
     
   }
@@ -82,7 +82,7 @@ public class GetData {
   public String GetData_YYJT(Map<String, String> model) {
    
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode());
+    model.put("certi", certi.getRandomCertiCode(18, 65));
     return "GetData";
    
   }
@@ -92,7 +92,7 @@ public class GetData {
   public String GetData_GGCS(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
-    model.put("certi", certi.getRandomCertiCode());
+    model.put("certi", certi.getRandomCertiCode(18, 65));
     return "GetData";
   
   }
