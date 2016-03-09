@@ -51,6 +51,14 @@ xmlns="http://maven.apache.org/POM/4.0.0">
           </jvmArguments>
         </configuration>
       </plugin>
+      <plugin>  
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>  
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>  
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
@@ -58,13 +66,23 @@ xmlns="http://maven.apache.org/POM/4.0.0">
             <failOnMissingWebXml>false</failOnMissingWebXml>
           </configuration>
       </plugin>
-      <plugin>  
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>  
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>  
+      <!-- 添加maven打包支持 -->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>make-jar</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>single</goal>
+                </goals>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/resources/jar.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
