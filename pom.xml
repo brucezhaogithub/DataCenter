@@ -69,18 +69,24 @@ xmlns="http://maven.apache.org/POM/4.0.0">
       <!-- 添加maven打包支持 -->
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+            <appendAssemblyId>false</appendAssemblyId>
+            <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archive>
+                <manifest>
+                    <mainClass>pers.wenzi.DataBank.Application</mainClass>
+                </manifest>
+            </archive>
+        </configuration>
         <executions>
             <execution>
-                <id>make-jar</id>
+                <id>make-assembly</id>
                 <phase>package</phase>
                 <goals>
-                    <goal>single</goal>
+                    <goal>assembly</goal>
                 </goals>
-                <configuration>
-                    <descriptors>
-                        <descriptor>src/main/resources/jar.xml</descriptor>
-                    </descriptors>
-                </configuration>
             </execution>
         </executions>
       </plugin>
