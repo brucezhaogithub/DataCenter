@@ -68,6 +68,7 @@ xmlns="http://maven.apache.org/POM/4.0.0">
       </plugin>
       <!-- 添加maven打包支持 -->
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
             <appendAssemblyId>false</appendAssemblyId>
