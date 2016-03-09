@@ -12,7 +12,7 @@
     <!-- 根据policyNo查询policy_xx.policy_xxxx表中保单数据 -->  
     <select id="QueryPolicy" parameterType="String" resultType="StudentEntity" resultMap="studentResultMap">  
         <![CDATA[ 
-            SELECT * FROM policy_00.policy_0000 WHERE policy_no = #{policyNo} UNION
+            SELECT * FROM policy_0000 WHERE policy_no = #{policyNo} UNION
             SELECT * FROM policy_00.policy_0001 WHERE policy_no = #{policyNo} UNION
             SELECT * FROM policy_01.policy_0002 WHERE policy_no = #{policyNo} UNION
             SELECT * FROM policy_01.policy_0003 WHERE policy_no = #{policyNo} 

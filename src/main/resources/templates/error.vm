@@ -1,4 +1,8 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>页面错误</title>
+    </head>
     <body>
         <span>没有找到指定的页面，请核对URL重新访问！</span>
     </body>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pers.wenzi.DataBank.util.CertinoUtil;
 
 /**
- * 航空意外险测试数据初始化
+ * 所有产品数据初始化
  * 
  */
 
@@ -22,7 +22,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
-    return "GetData";
+    return "getdata";
     
   }
   
@@ -33,7 +33,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 70));
-    return "GetData";
+    return "getdata";
    
   }
   
@@ -44,7 +44,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 85));
-    return "GetData";
+    return "getdata";
   
   }
   
@@ -56,7 +56,7 @@ public class GetData {
     model.put("relation", "本人+子女");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65, "female"));
     model.put("kid", certi.getRandomCertiCode(1, 18));
-    return "GetData";
+    return "getdata";
 
   }
   
@@ -66,9 +66,9 @@ public class GetData {
 
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人+子女");
-    model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
-    model.put("kid", certi.getRandomCertiCode(1, 18));
-    return "GetData";
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
+    model.put("kid", certi.getRandomCertiCode(18, 60));
+    return "getdata";
 
   }
   
@@ -82,7 +82,7 @@ public class GetData {
     model.put("spouse", certi.getRandomCertiCode(18, 65, "female"));
     model.put("parent", certi.getRandomCertiCode(40, 70));
     model.put("kid", certi.getRandomCertiCode(1, 18));
-    return "GetData";
+    return "getdata";
 
   }
   
@@ -93,7 +93,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 70));
-    return "GetData";
+    return "getdata";
     
   }
   
@@ -104,7 +104,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
-    return "GetData";
+    return "getdata";
    
   }
   
@@ -115,7 +115,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
-    return "GetData";
+    return "getdata";
   
   }
   
@@ -126,7 +126,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
-    return "GetData";
+    return "getdata";
   
   }
   
@@ -137,7 +137,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 45));
-    return "GetData";
+    return "getdata";
  
   }
   
@@ -148,7 +148,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 45, "female"));
-    return "GetData";
+    return "getdata";
 
   }
   
@@ -160,7 +160,7 @@ public class GetData {
     model.put("relation", "子女");
     model.put("tbrCerti", certi.getRandomCertiCode());
     model.put("kid", certi.getRandomCertiCode(1, 17));
-    return "GetData";
+    return "getdata";
   
   }
   
@@ -172,7 +172,7 @@ public class GetData {
     model.put("relation", "子女");
     model.put("tbrCerti", certi.getRandomCertiCode());
     model.put("kid", certi.getRandomCertiCode(4, 15));
-    return "GetData";
+    return "getdata";
  
   }
   
@@ -183,7 +183,7 @@ public class GetData {
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(20, 35, "female"));
-    return "GetData";
+    return "getdata";
 
   }
   
