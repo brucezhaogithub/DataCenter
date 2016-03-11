@@ -3,12 +3,14 @@ package pers.wenzi.datacenter.web;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pers.wenzi.datacenter.util.CertinoUtil;
 
 /**
- * 所有产品数据初始化
+ * 所有产品数据初始化  
  * 
  */
 
@@ -130,8 +132,12 @@ public class GetData {
   
   // 女性特定疾病保险-本人
   @RequestMapping(value="/NXJB")
-  public String GetData_NXJB(Map<String, String> model) {
+  public String GetData_NXJB(Map<String, Object> model, 
+      @RequestParam("minAge") int minAge, 
+      @RequestParam("maxAge") int maxAge) {
 
+    System.out.println("minAge:" + minAge);
+    System.out.println("maxAge:" + maxAge);
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 45, "female"));
