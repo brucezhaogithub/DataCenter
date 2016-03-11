@@ -1,4 +1,4 @@
-package pers.wenzi.DataBank;
+package pers.wenzi.datacenter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

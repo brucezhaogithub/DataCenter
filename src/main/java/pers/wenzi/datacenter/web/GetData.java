@@ -1,11 +1,11 @@
-package pers.wenzi.DataBank.controller;
+package pers.wenzi.datacenter.web;
 
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import pers.wenzi.DataBank.util.CertinoUtil;
+import pers.wenzi.datacenter.util.CertinoUtil;
 
 /**
  * 所有产品数据初始化
