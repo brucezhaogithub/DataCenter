@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pers.wenzi.datacenter.util.CertinoUtil;
@@ -131,16 +132,17 @@ public class GetData {
   }
   
   // 女性特定疾病保险-本人
-  @RequestMapping(value="/NXJB")
+  @RequestMapping(value="/NXJB", method=RequestMethod.GET)
   public String GetData_NXJB(Map<String, Object> model, 
-      @RequestParam("minAge") int minAge, 
-      @RequestParam("maxAge") int maxAge) {
-
-    System.out.println("minAge:" + minAge);
-    System.out.println("maxAge:" + maxAge);
+      @RequestParam(value="minAge", required=false, defaultValue="18") String minAge, 
+      @RequestParam(value="maxAge", required=false, defaultValue="60") String maxAge) {
+    
     CertinoUtil certi = new CertinoUtil();
     model.put("relation", "本人");
-    model.put("tbrCerti", certi.getRandomCertiCode(18, 45, "female"));
+    model.put("tbrCerti", certi.getRandomCertiCode(
+            Integer.valueOf(minAge).intValue(), 
+            Integer.valueOf(maxAge).intValue(), 
+            "female"));
     return "getdata";
 
   }
