@@ -137,11 +137,13 @@ public class GetData {
       @RequestParam(value="maxAge", required=false, defaultValue="45") String maxAge) {
     
     CertinoUtil certi = new CertinoUtil();
+    String url = "http://www.zhongan.com:6080/channel/product/productDetail_100002.html";
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(
             Integer.valueOf(minAge).intValue(), 
             Integer.valueOf(maxAge).intValue(), 
             "female"));
+    model.put("url", url);
     return "getdata";
 
   }

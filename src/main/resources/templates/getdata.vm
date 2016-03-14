@@ -29,5 +29,8 @@
         <span>其他证件号码：</span>
         <span>$other</span><br />
         #end
+        #if($url)
+        <span>投保链接：</span>
+        <span>$url</span>
     </body>
 </html>
