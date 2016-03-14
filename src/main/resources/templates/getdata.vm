@@ -5,29 +5,27 @@
     </head>
     <body>
         <!-- Velocity基本语法 http://pengenjing.iteye.com/blog/1829229 -->
-        <span>与投保人关系：</span>
-        <span>$relation</span><br />
         <span>投保人证件号码：</span>
         <span>$tbrCerti</span><br />
-        #if($tbr)
-        <span>投保人信息：</span>
-        <span>$tbr</span><br />
+        <span>投保人手机号码：</span>
+        <span>$tbrPhone</span><br />
+        #if($tbrEmail)
+        <span>投保人邮箱地址：</span>
+        <span>$tbrEmail</span><br />
         #end
-        #if($spouse)
-        <span>配偶证件号码：</span>
-        <span>$spouse</span><br />
+        <span>与投保人关系：</span>
+        <span>$relation</span><br />
+        #if($bbrCerti)
+        <span>被保人证件号码：</span>
+        <span>$bbrCerti</span><br />
         #end
-        #if($parent)
-        <span>父母证件号码：</span>
-        <span>$parent</span><br />
+        #if($bbrPhone)
+        <span>被保人手机号码：</span>
+        <span>$bbrPhone</span><br />
         #end
-        #if($kid)
-        <span>子女证件号码：</span>
-        <span>$kid</span><br />
-        #end
-        #if($other)
-        <span>其他证件号码：</span>
-        <span>$other</span><br />
+        #if($bbrEmail)
+        <span>被保人邮箱地址：</span>
+        <span>$bbrEmail</span><br />
         #end
         #if($url)
         <span>投保链接：</span>

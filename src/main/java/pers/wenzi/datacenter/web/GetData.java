@@ -136,26 +136,38 @@ public class GetData {
       @RequestParam(value="minAge", required=false, defaultValue="19") String minAge, 
       @RequestParam(value="maxAge", required=false, defaultValue="45") String maxAge) {
     
-    CertinoUtil certi = new CertinoUtil();
-    String url = "http://www.zhongan.com:6080/channel/product/productDetail_100002.html";
-    model.put("relation", "本人");
+    CertinoUtil   certi = new CertinoUtil();
+    final String  url   = "http://www.zhongan.com:6080/channel/product/productDetail_100002.html";
     model.put("tbrCerti", certi.getRandomCertiCode(
-            Integer.valueOf(minAge).intValue(), 
-            Integer.valueOf(maxAge).intValue(), 
-            "female"));
+        Integer.valueOf(minAge), 
+        Integer.valueOf(maxAge), 
+        "female"));
+    model.put("tbrPhone", "13108130001");
+    model.put("tbrEmail", "13108130001@qq.com");
+    model.put("relation", "本人");
     model.put("url", url);
     return "getdata";
 
   }
   
   // 未成年重大疾病保险-子女
-  @RequestMapping(value="/ETZJ")
-  public String GetData_ETZJ(Map<String, String> model) {
+  @RequestMapping(value="/ETZJ", method=RequestMethod.GET)
+  public String GetData_ETZJ(Map<String, String> model,
+      @RequestParam(value="minAge", required=false, defaultValue="1") String minAge,
+      @RequestParam(value="maxAge", required=false, defaultValue="17") String maxAge) {
   
-    CertinoUtil certi = new CertinoUtil();
+    CertinoUtil   certi = new CertinoUtil();
+    final String  url   = "http://www.zhongan.com:6080/channel/product/productDetail_100001.html";
+    
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
+    model.put("tbrPhone", "13108130002");
+    model.put("tbrEmail", "13108130002@qq.com");
     model.put("relation", "子女");
-    model.put("tbrCerti", certi.getRandomCertiCode());
-    model.put("kid", certi.getRandomCertiCode(1, 17));
+    model.put("bbrCerti", certi.getRandomCertiCode(
+        Integer.valueOf(minAge), 
+        Integer.valueOf(maxAge)));
+    model.put("bbrPhone", "13108130002");
+    model.put("url", url);
     return "getdata";
   
   }
