@@ -133,7 +133,7 @@ public class GetData {
   // 女性特定疾病保险-本人
   @RequestMapping(value="/NXJB", method=RequestMethod.GET)
   public String GetData_NXJB(Map<String, Object> model, 
-      @RequestParam(value="minAge", required=false, defaultValue="18") String minAge, 
+      @RequestParam(value="minAge", required=false, defaultValue="19") String minAge, 
       @RequestParam(value="maxAge", required=false, defaultValue="45") String maxAge) {
     
     CertinoUtil certi = new CertinoUtil();

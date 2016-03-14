@@ -31,6 +31,7 @@
         #end
         #if($url)
         <span>投保链接：</span>
-        <span>$url</span>
+        <span><a href="$url">点击投保</a></span>
+        #end
     </body>
 </html>
