@@ -1,0 +1,25 @@
+# Server settings
+server:
+    port: 8080
+    address: localhost
+
+# DataBase settings
+jdbc:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rds6fbqrf6fbqrf.mysql.rds.aliyuncs.com
+    username: readonly_tst
+    password: readonly_tst
+
+# HTTP settings
+spring:
+    # HTTP ENCODING
+    http:
+        encoding.charset: UTF-8
+        encoding.enable: true
+        encoding.force: true
+
+# Mybatis settings
+mybatis:
+    typeAliasesPackage: 
+    mapperLocations: classpath:/pers.wenzi.datacenter.mapper/*.xml
+    configLocation: classpath:/mybatis-config.xml
