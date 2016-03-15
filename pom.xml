@@ -26,7 +26,7 @@ xmlns="http://maven.apache.org/POM/4.0.0">
           <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>springloaded</artifactId>
-            <version>1.2.0.RELEASE</version>
+            <version>1.2.5.RELEASE</version>
           </dependency>
         </dependencies>
         <executions>
