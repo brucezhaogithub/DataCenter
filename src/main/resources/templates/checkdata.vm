@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>提交保单数据</title>
+    </head>
+    <body>
+        <span>保单号：</span>
+        <span>$policyNo</span>
+    </body>
+</html>
