@@ -2,6 +2,7 @@
 server:
     port: 8080
     address: localhost
+    contextPath: /
     
 # HTTP settings
 spring:
