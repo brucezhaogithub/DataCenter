@@ -21,5 +21,5 @@ spring:
 # Mybatis settings
 mybatis:
     typeAliasesPackage: 
-    mapperLocations: classpath:/pers.wenzi.datacenter.mapper/*.xml
-    configLocation: classpath:/mybatis-config.xml
+    mapperLocations: classpath: /pers.wenzi.datacenter.mapper/*.xml
+    configLocation: classpath: /mybatis-config.xml
