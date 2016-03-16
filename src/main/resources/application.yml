@@ -4,11 +4,11 @@ server:
     address: localhost
 
 # DataBase settings
-jdbc:
-    driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rds6fbqrf6fbqrf.mysql.rds.aliyuncs.com
-    username: readonly_tst
-    password: readonly_tst
+#jdbc:
+#    driverClass: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://rds6fbqrf6fbqrf.mysql.rds.aliyuncs.com
+#    username: readonly_tst
+#    password: readonly_tst
 
 # HTTP settings
 spring:
@@ -19,7 +19,7 @@ spring:
         encoding.force: true
 
 # Mybatis settings
-mybatis:
-    typeAliasesPackage: 
-    mapperLocations: classpath:/pers.wenzi.datacenter.mapper/*.xml
-    configLocation: classpath:/mybatis-config.xml
+# mybatis:
+#    typeAliasesPackage: 
+#    mapperLocations: classpath:/pers.wenzi.datacenter.mapper/*.xml
+#    configLocation: classpath:/mybatis-config.xml
