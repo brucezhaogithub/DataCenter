@@ -2,14 +2,7 @@
 server:
     port: 8080
     address: localhost
-
-# DataBase settings
-#jdbc:
-#    driverClass: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://rds6fbqrf6fbqrf.mysql.rds.aliyuncs.com
-#    username: readonly_tst
-#    password: readonly_tst
-
+    
 # HTTP settings
 spring:
     # HTTP ENCODING
@@ -17,6 +10,13 @@ spring:
         encoding.charset: UTF-8
         encoding.enable: true
         encoding.force: true
+
+# DataBase settings
+#jdbc:
+#    driverClass: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://rds6fbqrf6fbqrf.mysql.rds.aliyuncs.com
+#    username: readonly_tst
+#    password: readonly_tst
 
 # Mybatis settings
 # mybatis:

@@ -14,10 +14,6 @@ public class Application {
     public static void main(String[] args) {
       
       SpringApplication.run(Application.class, args);
-//      String[] activeProfiles = ctx.getEnvironment().getActiveProfiles();
-//      for (String profile : activeProfiles) {
-//        System.out.println("当前使用属性文件：" + profile);
-//      }
       
     }
     
