@@ -4,7 +4,15 @@
         <title>提交保单数据</title>
     </head>
     <body>
+        <span>保单ID：</span>
+        <span>$policyId</span>
         <span>保单号：</span>
         <span>$policyNo</span>
+        <span>产品版型：</span>
+        <span>$productId</span>
+        <span>产品组合：</span>
+        <span>$packageDefId</span>
+        <span>营销渠道：</span>
+        <span>$campaignDefId</span>
     </body>
 </html>
