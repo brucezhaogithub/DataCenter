@@ -10,7 +10,7 @@
         </layout>   
     </appender>
     
-    <logger name="pers.wenzi" level="TRACE"/>
+    <logger name="pers.wenzi.datacenter" level="TRACE"/>
     
     <!-- 日志输出级别 -->
     <root level="DEBUG">   
