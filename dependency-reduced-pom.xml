@@ -54,6 +54,12 @@
             <transformer>
               <mainClass>pers.wenzi.datacenter.Application</mainClass>
             </transformer>
+            <transformer>
+              <resource>META-INF/spring.handlers</resource>
+            </transformer>
+            <transformer>
+              <resource>META-INF/spring.schemas</resource>
+            </transformer>
           </transformers>
         </configuration>
       </plugin>
