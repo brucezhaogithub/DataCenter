@@ -57,6 +57,7 @@ xmlns="http://maven.apache.org/POM/4.0.0">
                             <mainClass>pers.wenzi.datacenter.Application</mainClass>
                         </transformer>
                     </transformers>
+                    <createSourcesJar>true</createSourcesJar>
                 </configuration>
             </execution>
         </executions>
