@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<select id="selectPolicy" parameterType="String" resultType="Policy">
-  SELECT * FROM POLICY_00.POLICY_0001 WHERE POLICY_NO = #{policyNo}
-</select>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pers.wenzi.datacenter.mapper.PolicyMapper">
+  <select id="selectPolicy" parameterType="String" resultType="Policy">
+     select policy_no, product_id, package_def_id, campaign_def_id
+     from policy_00.policy_0000 
+     where policy_no = #{policyNo}
+  </select>
+</mapper>

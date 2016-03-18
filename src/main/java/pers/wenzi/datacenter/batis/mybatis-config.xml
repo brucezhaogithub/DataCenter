@@ -2,7 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-  <properties resource="src/main/resources/application.properties" />
+  <!-- <properties resource="src/main/resources/application.properties" /> -->
   
   <typeAliases>
     <typeAlias alias="Policy" type="pers.wenzi.datacenter.entity.PolicyEntity" />
@@ -12,16 +12,16 @@
     <environment id="dev">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
-        <property name="driver" value="${database.driver}" />
-        <property name="url" value="${database.url}" />
-        <property name="username" value="${database.username}" />
-        <property name="password" value="${database.password}" />
+        <property name="driver" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://rds6fbqrf6fbqrf.mysql.rds.aliyuncs.com" />
+        <property name="username" value="readonly_tst" />
+        <property name="password" value="readonly_tst" />
       </dataSource>
     </environment>
   </environments>
   
   <mappers>
-    <package name="pers.wenzi.datacenter.mapper" />
+    <mapper resource="pers/wenzi/datacenter/mapper/PolicyMapper.xml" />
   </mappers>
   
 </configuration>

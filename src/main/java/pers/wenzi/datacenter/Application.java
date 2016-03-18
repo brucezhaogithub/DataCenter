@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 
 /**
  * itest自动化测试框架数据银行主入口
- * 
  */
 
 @SpringBootApplication
