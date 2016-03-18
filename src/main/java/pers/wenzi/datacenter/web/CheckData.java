@@ -1,17 +1,11 @@
 package pers.wenzi.datacenter.web;
 
-import java.io.InputStream;
 import java.util.Map;
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import pers.wenzi.datacenter.entity.PolicyEntity;
 
 @Controller
 @RequestMapping(value="/CheckData")
