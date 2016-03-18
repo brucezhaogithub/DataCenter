@@ -20,6 +20,7 @@ xmlns="http://maven.apache.org/POM/4.0.0">
   <properties>
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <dao.target.dir>src/main/java</dao.target.dir>
   </properties>
   
   <build>
@@ -47,6 +48,24 @@ xmlns="http://maven.apache.org/POM/4.0.0">
           </configuration>
       </plugin>
     </plugins>
+    <!-- 添加 MyBatis Generate 代码自动生成支持 -->
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </pluginManagement>
   </build>
   
   <dependencyManagement>
@@ -96,12 +115,6 @@ xmlns="http://maven.apache.org/POM/4.0.0">
       <groupId>tk.mybatis</groupId>
       <artifactId>mapper</artifactId>
       <version>3.3.7</version>
-    </dependency>
-    <!-- Mybatis 自动生成代码支持 -->
-    <dependency>
-      <groupId>org.mybatis.generator</groupId>
-      <artifactId>mybatis-generator-core</artifactId>
-      <version>1.3.2</version>
     </dependency>
     <!-- pagehelper 分页插件支持 -->
     <dependency>
