@@ -22,7 +22,7 @@ public class CheckData {
   public String submitData(Map<String, String> model, 
       @PathVariable("policyNo") String policyNo) throws IOException {
     
-    String                    resource  = "pers/wenzi/datacenter/batis/mybatis-config.xml";
+    String                    resource  = "src/main/resources/mybatis-config.xml";
     System.out.println("resource path is:" + Resources.getResourceAsStream(resource));
     InputStream               is        = Resources.getResourceAsStream(resource);
     SqlSessionFactoryBuilder  builder   = new SqlSessionFactoryBuilder();
