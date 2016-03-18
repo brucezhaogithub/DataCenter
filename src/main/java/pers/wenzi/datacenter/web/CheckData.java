@@ -22,20 +22,14 @@ public class CheckData {
   public String submitData(Map<String, String> model, 
       @PathVariable("policyNo") String policyNo) throws IOException {
     
-    String                    resource  = "/batisconf.xml";
-    System.out.println("resource path is:" + CheckData.class.getResourceAsStream(resource));
+    String                    resource  = "pers/wenzi/datacenter/batis/mybatis-config.xml";
+    System.out.println("resource path is:" + Resources.getResourceAsStream(resource));
     InputStream               is        = Resources.getResourceAsStream(resource);
     SqlSessionFactoryBuilder  builder   = new SqlSessionFactoryBuilder();
     SqlSessionFactory         factory   = builder.build(is);
     SqlSession                session   = factory.openSession();
-    String statement = "pers.wenzi.datacenter.mapper.PolicyMapper.getPolicy";
+    String statement = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
     String result = session.selectOne(statement);
-  //    PolicyEntity policyEntity = session.selectOne(statement, 1);
-//    model.put("policyId", policyEntity.getPolicyId());
-//    model.put("policyNo", policyEntity.getPolicyNo());
-//    model.put("productId", policyEntity.getProductId());
-//    model.put("packageDefId", policyEntity.getPackageDefId());
-//    model.put("campaignDefId", policyEntity.getCampaignDefId());
     model.put("policyId", result);
     model.put("policyNo", policyNo);
     return "checkdata";
