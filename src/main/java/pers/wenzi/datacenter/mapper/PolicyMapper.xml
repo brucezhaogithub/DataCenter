@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<select id="selectPolicy" parameterType="String" resultType="pers.wenzi.datacenter.entity.PolicyEntity">
+<select id="selectPolicy" parameterType="String" resultType="Policy">
   SELECT * FROM POLICY_00.POLICY_0001 WHERE POLICY_NO = #{policyNo}
 </select>

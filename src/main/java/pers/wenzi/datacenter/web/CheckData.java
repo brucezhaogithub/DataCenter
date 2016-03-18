@@ -2,6 +2,7 @@ package pers.wenzi.datacenter.web;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Reader;
 import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
@@ -22,11 +23,12 @@ public class CheckData {
   public String submitData(Map<String, String> model, 
       @PathVariable("policyNo") String policyNo) throws IOException {
     
-    String                    resource  = "src/main/resources/mybatis-config.xml";
-    System.out.println("resource path is:" + Resources.getResourceAsStream(resource));
-    InputStream               is        = Resources.getResourceAsStream(resource);
+    String                    resource  = "/mybatis-config.xml";
+    Reader                    reader    = Resources.getResourceAsReader(resource);
+    System.out.println("resource path is:" + reader);
+//    InputStream               is        = Resources.getResourceAsStream(resource);
     SqlSessionFactoryBuilder  builder   = new SqlSessionFactoryBuilder();
-    SqlSessionFactory         factory   = builder.build(is);
+    SqlSessionFactory         factory   = builder.build(reader);
     SqlSession                session   = factory.openSession();
     String statement = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
     String result = session.selectOne(statement);
