@@ -26,15 +26,16 @@ public class CheckData {
     
     String                    resource  = "pers/wenzi/datacenter/batis/mybatis-config.xml";
     Reader                    reader    = Resources.getResourceAsReader(resource);
-    System.out.println("resource path is:" + reader);
-//    InputStream               is        = Resources.getResourceAsStream(resource);
     SqlSessionFactoryBuilder  builder   = new SqlSessionFactoryBuilder();
     SqlSessionFactory         factory   = builder.build(reader);
     SqlSession                session   = factory.openSession();
-    String statement = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
-    PolicyEntity policyEntity = session.selectOne(statement, policyNo);
-    model.put("policyNo", policyNo);
-    model.put("productId", policyEntity.getProductId());
+    String                    statement = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
+    PolicyEntity              entity    = session.selectOne(statement, policyNo);
+    model.put("policyId",       entity.getId());
+    model.put("policyNo",       entity.getPolicyNo());
+    model.put("productId",      entity.getProductId());
+    model.put("packageDefId",   entity.getPackageDefId());
+    model.put("campaignDefId",  entity.getCampaignDefId());
     return "checkdata";
     
   }

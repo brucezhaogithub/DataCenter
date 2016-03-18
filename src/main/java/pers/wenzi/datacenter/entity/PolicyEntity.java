@@ -2,6 +2,7 @@ package pers.wenzi.datacenter.entity;
 
 public class PolicyEntity {
 
+  private String id;
   private String policyNo;
   private String productId;
   private String packageDefId;
@@ -10,6 +11,12 @@ public class PolicyEntity {
   /*
    * get
    */
+  
+  public String getId() {
+    
+    return id;
+    
+  }
   
   public String getPolicyNo() {
     
@@ -39,7 +46,13 @@ public class PolicyEntity {
    * set
    */
   
-public void setPolicyNo(String policyNo) {
+  public void setId(String id) {
+    
+    this.id = id;
+    
+  }
+  
+  public void setPolicyNo(String policyNo) {
     
     this.policyNo = policyNo;
     
