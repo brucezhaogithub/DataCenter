@@ -99,7 +99,6 @@ xmlns="http://maven.apache.org/POM/4.0.0">
       <plugin>  
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version><!--$NO-MVN-MAN-VER$-->
         <configuration>  
           <source>1.8</source>
           <target>1.8</target>
