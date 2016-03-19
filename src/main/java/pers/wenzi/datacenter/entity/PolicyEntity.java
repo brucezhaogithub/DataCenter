@@ -3,10 +3,10 @@ package pers.wenzi.datacenter.entity;
 public class PolicyEntity {
 
   private String id;
-  private String policyNo;
-  private String productId;
-  private String packageDefId;
-  private String campaignDefId;
+  private String policy_no;
+  private String product_id;
+  private String package_def_id;
+  private String campaign_def_id;
   
   /*
    * get
@@ -20,25 +20,25 @@ public class PolicyEntity {
   
   public String getPolicyNo() {
     
-    return policyNo;
+    return policy_no;
     
   }
   
   public String getProductId() {
     
-    return productId;
+    return product_id;
     
   }
 
   public String getPackageDefId() {
   
-    return packageDefId;
+    return package_def_id;
   
   }
 
   public String getCampaignDefId() {
   
-    return campaignDefId;
+    return campaign_def_id;
   
   }
   
@@ -52,27 +52,27 @@ public class PolicyEntity {
     
   }
   
-  public void setPolicyNo(String policyNo) {
+  public void setPolicyNo(String policy_no) {
     
-    this.policyNo = policyNo;
-    
-  }
-  
-  public void setProductId(String productId) {
-    
-    this.productId = productId;
+    this.policy_no = policy_no;
     
   }
-
-  public void setPackageDefId(String packageDefId) {
   
-    this.packageDefId = packageDefId;
-  
+  public void setProductId(String product_id) {
+    
+    this.product_id = product_id;
+    
   }
 
-  public void setCampaignDefId(String campaignDefId) {
+  public void setPackageDefId(String package_def_id) {
   
-    this.campaignDefId = campaignDefId;
+    this.package_def_id = package_def_id;
+  
+  }
+
+  public void setCampaignDefId(String campaign_def_id) {
+  
+    this.campaign_def_id = campaign_def_id;
   
   }
   

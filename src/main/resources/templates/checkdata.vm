@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>提交保单数据</title>
+        <title>保单数据校验</title>
     </head>
     <body>
         <span>保单ID：</span>
