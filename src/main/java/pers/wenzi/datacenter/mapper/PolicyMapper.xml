@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pers.wenzi.datacenter.mapper.PolicyMapper">
-  <select id="selectPolicy" parameterType="String" resultType="Policy">
-     select id, policy_no, product_id, package_def_id, campaign_def_id
-     from policy_00.policy_0000 
-     where policy_no = #{policyNo}
+
+  <resultMap type="PolicyEntity" id="PolicyResult">
+    <id property="policyId" column="id" />
+    <result property="policyNo" column="policy_no" />
+    <result property="productId" column="product_id" />
+    <result property="packageDefId" column="package_def_id" />
+    <result property="campaignDefId" column="campaign_def_id" />
+  </resultMap>
+
+  <select id="selectPolicy" parameterType="String" resultMap="PolicyResult">
+     select * from policy_00.policy_0000 where policy_no = #{policyNo} union
+     select * from policy_00.policy_0001 where policy_no = #{policyNo} union
+     select * from policy_01.policy_0002 where policy_no = #{policyNo} union
+     select * from policy_01.policy_0003 where policy_no = #{policyNo}
   </select>
+  
 </mapper>
