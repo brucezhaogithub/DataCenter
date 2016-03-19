@@ -3,9 +3,6 @@ package pers.wenzi.datacenter.web;
 import java.io.IOException;
 import java.util.Map;
 
-import org.springframework.dao.DataAccessResourceFailureException;
-import org.springframework.dao.DataRetrievalFailureException;
-import org.springframework.dao.DeadlockLoserDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
