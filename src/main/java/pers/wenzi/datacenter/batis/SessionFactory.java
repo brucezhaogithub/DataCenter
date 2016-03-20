@@ -28,12 +28,17 @@ public class SessionFactory {
     
   }
   
-  public static Entity getSessionEntity(Entity entity, String stmt, String key) throws IOException {
+  public static Entity getSessionEntity(Entity entity, String stmt, String key) {
     
-    SqlSessionFactory factory = SessionFactory.getInstance();
-    SqlSession        session = factory.openSession();
+    SqlSessionFactory factory = null;
+    SqlSession        session = null;
     try {
+      factory = SessionFactory.getInstance();
+      session = factory.openSession();
       entity  = session.selectOne(stmt, key);
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      System.out.println(e);
     } finally {
       session.close();
     }

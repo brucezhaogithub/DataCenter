@@ -1,6 +1,5 @@
 package pers.wenzi.datacenter.web;
 
-import java.io.IOException;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -19,9 +18,8 @@ public class CheckData {
   // 官网-女性疾病-数据校验
   @RequestMapping(value="/Online-NXJB/{policyNo}", method=RequestMethod.GET)
   public String submitData(Map<String, String> model, 
-      @PathVariable("policyNo") String policyNo) throws IOException{
+      @PathVariable("policyNo") String policyNo) {
 
-    try {
     Entity entity = new PolicyEntity();
     String stmt   = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
     entity        = SessionFactory.getSessionEntity(entity, stmt, policyNo);
@@ -30,10 +28,6 @@ public class CheckData {
     model.put("productId",      entity.getProductId());
     model.put("packageDefId",   entity.getPackageDefId());
     model.put("campaignDefId",  entity.getCampaignDefId());
-    } catch (IOException e) {
-      model.put("error", "没有找到数据, 请检查数据后执行！");
-      return "error";
-    }
     return "checkdata";
     
   }
