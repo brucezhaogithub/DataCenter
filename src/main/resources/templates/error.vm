@@ -4,6 +4,10 @@
         <title>页面错误</title>
     </head>
     <body>
-        <span>系统繁忙, 或请检查数据后执行！</span>
+        #if($error)
+        <span>$error</span>
+        #else
+        <span>系统繁忙, 请稍后执行！</span>
+        #end
     </body>
 </html>

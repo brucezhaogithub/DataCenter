@@ -31,7 +31,7 @@ public class CheckData {
     model.put("packageDefId",   entity.getPackageDefId());
     model.put("campaignDefId",  entity.getCampaignDefId());
     } catch (IOException e) {
-      model.put("error", "没有找到数据, 请确认参数是否正确！");
+      model.put("error", "没有找到数据, 请检查数据后执行！");
       return "error";
     }
     return "checkdata";
