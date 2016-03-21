@@ -11,7 +11,7 @@ import pers.wenzi.datacenter.asserts.PolicyAssert;
 import pers.wenzi.datacenter.dao.SessionFactory;
 import pers.wenzi.datacenter.entity.Entity;
 import pers.wenzi.datacenter.entity.PolicyEntity;
-import pers.wenzi.datacenter.util.ProductList;
+import pers.wenzi.datacenter.util.ProductUtil;
 
 @Controller
 @RequestMapping(value="/CheckData")
@@ -30,17 +30,17 @@ public class CheckData {
               PolicyAssert.AssertToString(
                   "productId", 
                   entity.getProductId(), 
-                  ProductList.ONLINE_NXJB_PRODUCTID));
+                  ProductUtil.ONLINE_NXJB_PRODUCTID));
     model.put("packageDefId", 
               PolicyAssert.AssertToString(
                   "packageDefId", 
                   entity.getPackageDefId(), 
-                  ProductList.ONLINE_NXJB_PACKAGEDEFID));
+                  ProductUtil.ONLINE_NXJB_PACKAGEDEFID));
     model.put("campaignDefId", 
               PolicyAssert.AssertToString(
                   "productId", 
                   entity.getPackageDefId(), 
-                  ProductList.ONLINE_NXJB_CAMPAIGNDEFID));
+                  ProductUtil.ONLINE_NXJB_CAMPAIGNDEFID));
     return "checkdata";
     
   }

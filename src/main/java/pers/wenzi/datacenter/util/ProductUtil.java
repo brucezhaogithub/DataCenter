@@ -1,6 +1,6 @@
 package pers.wenzi.datacenter.util;
 
-public class ProductList {
+public class ProductUtil {
   
   /*
    * 渠道：官网
