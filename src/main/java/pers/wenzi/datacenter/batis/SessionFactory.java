@@ -7,14 +7,24 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.stereotype.Repository;
 
 import pers.wenzi.datacenter.entity.Entity;
 
+@Repository
 public class SessionFactory {
   
   private static SqlSessionFactory factory;
   
-  private SessionFactory(){};
+  public SessionFactory() throws IOException {
+    
+    if (factory == null) {
+      String resource = "pers/wenzi/datacenter/batis/mybatis-config.xml";
+      Reader reader   = Resources.getResourceAsReader(resource);
+      factory         = new SqlSessionFactoryBuilder().build(reader);
+    }
+    
+  }
   
   public static SqlSessionFactory getInstance() throws IOException {
     
@@ -30,16 +40,23 @@ public class SessionFactory {
   
   public static Entity getSessionEntity(Entity entity, String stmt, String key) {
     
-    SqlSessionFactory factory = null;
-    SqlSession        session = null;
+//    SqlSessionFactory factory = null;
+//    SqlSession        session = null;
+//    try {
+//      factory = SessionFactory.getInstance();
+//      session = factory.openSession();
+//      entity  = session.selectOne(stmt, key);
+//    } catch (IOException e) {
+//      // TODO Auto-generated catch block
+//      System.out.println(e);
+//    } finally {
+//      session.close();
+//    }
+    SqlSession session = null;
     try {
-      factory = SessionFactory.getInstance();
       session = factory.openSession();
-      entity  = session.selectOne(stmt, key);
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
-      System.out.println(e);
-    } finally {
+      entity = session.selectOne(stmt, key);
+    }finally {
       session.close();
     }
     return entity;
