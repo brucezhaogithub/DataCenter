@@ -1,14 +1,24 @@
 package pers.wenzi.datacenter.asserts;
 
+import pers.wenzi.datacenter.batis.SessionFactory;
+import pers.wenzi.datacenter.entity.Entity;
+
 public class PolicyAssert {
   
-  private String expProductId;
-  private String expPackageDefId;
-  private String expCampaignDefId;
-  
-  public PolicyAssert() {
+  public PolicyAssert(Entity entity,String stmt, String param, int channelId, String productName) {
     
+    entity        = SessionFactory.getSessionEntity(entity, stmt, param);
+    if (channelId == 90) {
+      if ("nxjb".equals(productName)) {
+        entity.setExpProductId("");
+        entity.setExpPackageDefId("");
+        entity.setExpCampaignDefId("");
+      }
+    }
     
+    if (channelId == 94) {
+      
+    }
     
   }
   

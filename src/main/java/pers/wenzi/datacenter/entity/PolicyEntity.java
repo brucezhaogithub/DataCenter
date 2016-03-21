@@ -8,6 +8,7 @@ public class PolicyEntity extends Entity {
   private String packageDefId;
   private String campaignDefId;
   
+  
   /*
    * Get Method
    */
@@ -42,6 +43,24 @@ public class PolicyEntity extends Entity {
   
   }
   
+  public String getExpProductId() {
+    
+    return expProductId;
+    
+  }
+  
+  public String getExpPackageDefId() {
+    
+    return expPackageDefId;
+    
+  }
+  
+  public String getExpCampaignDefId() {
+    
+    return expCampaignDefId;
+    
+  }
+  
   /*
    * Set Method
    */
@@ -74,6 +93,24 @@ public class PolicyEntity extends Entity {
   
     this.campaignDefId = campaignDefId;
   
+  }
+  
+  public void setExpProductId(String productId) {
+    
+    this.expProductId = productId;
+    
+  }
+  
+  public void setExpPackageDefId(String packageDefId) {
+    
+    this.expPackageDefId = packageDefId;
+    
+  }
+  
+  public void setExpCampaignDefId(String campaignDefId) {
+    
+    this.expCampaignDefId = campaignDefId;
+    
   }
   
 }
