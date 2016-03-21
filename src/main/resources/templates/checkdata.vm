@@ -4,15 +4,13 @@
         <title>保单数据校验</title>
     </head>
     <body>
-        <span>保单ID：</span>
-        <span>$policyId</span>
         <span>保单号：</span>
-        <span>$policyNo</span>
+        <span>$policyNo</span><br />
         <span>产品版型：</span>
-        <span>$productId</span>
+        <span>$productId</span><br />
         <span>产品组合：</span>
-        <span>$packageDefId</span>
+        <span>$packageDefId</span><br />
         <span>营销渠道：</span>
-        <span>$campaignDefId</span>
+        <span>$campaignDefId</span><br />
     </body>
 </html>
