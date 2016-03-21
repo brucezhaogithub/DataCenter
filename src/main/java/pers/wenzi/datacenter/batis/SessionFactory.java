@@ -26,6 +26,7 @@ public class SessionFactory {
     
   }
   
+  @Deprecated
   public static SqlSessionFactory getInstance() throws IOException {
     
     if (factory == null) {
@@ -40,18 +41,6 @@ public class SessionFactory {
   
   public static Entity getSessionEntity(Entity entity, String stmt, String key) {
     
-//    SqlSessionFactory factory = null;
-//    SqlSession        session = null;
-//    try {
-//      factory = SessionFactory.getInstance();
-//      session = factory.openSession();
-//      entity  = session.selectOne(stmt, key);
-//    } catch (IOException e) {
-//      // TODO Auto-generated catch block
-//      System.out.println(e);
-//    } finally {
-//      session.close();
-//    }
     SqlSession session = null;
     try {
       session = factory.openSession();
