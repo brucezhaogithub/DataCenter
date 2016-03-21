@@ -16,7 +16,7 @@ import pers.wenzi.datacenter.entity.PolicyEntity;
 public class CheckData {
   
   // 官网-女性疾病-数据校验
-  @RequestMapping(value="/Online-NXJB/{policyNo}", method=RequestMethod.GET)
+  @RequestMapping(value="/online/nxjb/{policyNo}", method=RequestMethod.GET)
   public String submitData(Map<String, String> model, 
       @PathVariable("policyNo") String policyNo) {
 

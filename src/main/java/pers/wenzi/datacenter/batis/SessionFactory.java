@@ -39,12 +39,12 @@ public class SessionFactory {
     
   }
   
-  public static Entity getSessionEntity(Entity entity, String stmt, String key) {
+  public static Entity getSessionEntity(Entity entity, String stmt, String param) {
     
     SqlSession session = null;
     try {
       session = factory.openSession();
-      entity = session.selectOne(stmt, key);
+      entity = session.selectOne(stmt, param);
     }finally {
       session.close();
     }
