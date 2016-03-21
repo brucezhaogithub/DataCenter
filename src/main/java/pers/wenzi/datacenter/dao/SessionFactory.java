@@ -1,4 +1,4 @@
-package pers.wenzi.datacenter.batis;
+package pers.wenzi.datacenter.dao;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -19,7 +19,7 @@ public class SessionFactory {
   public SessionFactory() throws IOException {
     
     if (factory == null) {
-      String resource = "pers/wenzi/datacenter/batis/mybatis-config.xml";
+      String resource = "batis/mybatis-config.xml";
       Reader reader   = Resources.getResourceAsReader(resource);
       factory         = new SqlSessionFactoryBuilder().build(reader);
     }

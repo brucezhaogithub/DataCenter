@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import pers.wenzi.datacenter.asserts.PolicyAssert;
-import pers.wenzi.datacenter.batis.SessionFactory;
+import pers.wenzi.datacenter.dao.SessionFactory;
 import pers.wenzi.datacenter.entity.Entity;
 import pers.wenzi.datacenter.entity.PolicyEntity;
 import pers.wenzi.datacenter.util.ProductList;
