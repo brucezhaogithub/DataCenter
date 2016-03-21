@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import pers.wenzi.datacenter.asserts.PolicyAssert;
 import pers.wenzi.datacenter.batis.SessionFactory;
 import pers.wenzi.datacenter.entity.Entity;
 import pers.wenzi.datacenter.entity.PolicyEntity;
+import pers.wenzi.datacenter.util.ProductList;
 
 @Controller
 @RequestMapping(value="/CheckData")
@@ -23,11 +25,22 @@ public class CheckData {
     Entity entity = new PolicyEntity();
     String stmt   = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
     entity        = SessionFactory.getSessionEntity(entity, stmt, policyNo);
-    model.put("policyId",       entity.getPolicyId());
-    model.put("policyNo",       entity.getPolicyNo());
-    model.put("productId",      entity.getProductId());
-    model.put("packageDefId",   entity.getPackageDefId());
-    model.put("campaignDefId",  entity.getCampaignDefId());
+    model.put("policyNo", entity.getPolicyNo());
+    model.put("productId", 
+              PolicyAssert.AssertToString(
+                  "productId", 
+                  entity.getProductId(), 
+                  ProductList.ONLINE_NXJB_PRODUCTID));
+    model.put("packageDefId", 
+              PolicyAssert.AssertToString(
+                  "packageDefId", 
+                  entity.getPackageDefId(), 
+                  ProductList.ONLINE_NXJB_PACKAGEDEFID));
+    model.put("campaignDefId", 
+              PolicyAssert.AssertToString(
+                  "productId", 
+                  entity.getPackageDefId(), 
+                  ProductList.ONLINE_NXJB_CAMPAIGNDEFID));
     return "checkdata";
     
   }
