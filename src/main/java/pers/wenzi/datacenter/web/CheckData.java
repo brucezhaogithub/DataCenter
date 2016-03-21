@@ -17,29 +17,30 @@ import pers.wenzi.datacenter.util.ProductUtil;
 @RequestMapping(value="/CheckData")
 public class CheckData {
   
+  Entity policyEntity;
+  
   // 官网-女性疾病-数据校验
   @RequestMapping(value="/online/nxjb/{policyNo}", method=RequestMethod.GET)
   public String submitData(Map<String, String> model, 
       @PathVariable("policyNo") String policyNo) {
-
-    Entity entity = new PolicyEntity();
+    
     String stmt   = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
-    entity        = SessionFactory.getSessionEntity(entity, stmt, policyNo);
-    model.put("policyNo", entity.getPolicyNo());
+    policyEntity  = SessionFactory.getSessionEntity(new PolicyEntity(), stmt, policyNo);
+    model.put("policyNo", policyEntity.getPolicyNo());
     model.put("productId", 
               PolicyAssert.AssertToString(
                   "productId", 
-                  entity.getProductId(), 
+                  policyEntity.getProductId(), 
                   ProductUtil.ONLINE_NXJB_PRODUCTID));
     model.put("packageDefId", 
               PolicyAssert.AssertToString(
                   "packageDefId", 
-                  entity.getPackageDefId(), 
+                  policyEntity.getPackageDefId(), 
                   ProductUtil.ONLINE_NXJB_PACKAGEDEFID));
     model.put("campaignDefId", 
               PolicyAssert.AssertToString(
                   "productId", 
-                  entity.getPackageDefId(), 
+                  policyEntity.getPackageDefId(), 
                   ProductUtil.ONLINE_NXJB_CAMPAIGNDEFID));
     return "checkdata";
     
