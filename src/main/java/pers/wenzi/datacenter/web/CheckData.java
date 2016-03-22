@@ -39,7 +39,7 @@ public class CheckData {
                   ProductUtil.ONLINE_NXJB_PACKAGEDEFID));
     model.put("campaignDefId", 
               PolicyAssert.AssertToString(
-                  "productId", 
+                  "campaignDefId", 
                   policyEntity.getPackageDefId(), 
                   ProductUtil.ONLINE_NXJB_CAMPAIGNDEFID));
     return "checkdata";
