@@ -7,11 +7,11 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import pers.wenzi.datacenter.entity.Entity;
 
-@Repository
+@Component
 public class SessionFactory {
   
   private static SqlSessionFactory factory;
@@ -22,19 +22,6 @@ public class SessionFactory {
       String resource = "batis/mybatis-config.xml";
       Reader reader   = Resources.getResourceAsReader(resource);
       factory         = new SqlSessionFactoryBuilder().build(reader);
-    }
-    
-  }
-  
-  @Deprecated
-  public static SqlSessionFactory getInstance() throws IOException {
-    
-    if (factory == null) {
-      String resource = "pers/wenzi/datacenter/batis/mybatis-config.xml";
-      Reader reader   = Resources.getResourceAsReader(resource);
-      return new SqlSessionFactoryBuilder().build(reader);
-    }else {
-      return factory;
     }
     
   }
