@@ -15,14 +15,15 @@ import pers.wenzi.datacenter.util.CertinoUtil;
  */
 
 @Controller
-@RequestMapping(value="/GetData")
+@RequestMapping(value="/getdata")
 public class GetData {
   
   // 银行卡盗刷资金损失保险-本人
-  @RequestMapping(value="/YHDS")
+  @RequestMapping(value="/yhds")
   public String GetData_YHDS(Map<String, String> model) {
     
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-银行卡盗刷资金损失保险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
     return "getdata";
@@ -30,10 +31,11 @@ public class GetData {
   }
   
   // 多轴飞行器责任保险-本人
-  @RequestMapping(value="/DZFX")
+  @RequestMapping(value="/dzfx")
   public String GetData_DZFX(Map<String, String> model) {
    
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-多轴飞行器责任保险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 70));
     return "getdata";
@@ -41,10 +43,11 @@ public class GetData {
   }
   
   // 个人法律费用补偿保险-本人
-  @RequestMapping(value="/FLFY")
+  @RequestMapping(value="/flfy")
   public String GetData_FLFY(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-个人法律费用补偿保险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 85));
     return "getdata";
@@ -52,10 +55,11 @@ public class GetData {
   }
   
   // 亲子旅行意外伤害保险-本人+子女
-  @RequestMapping(value="/QZLX")
+  @RequestMapping(value="/qzlx")
   public String GetData_QZLX(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-亲自履行意外伤害保险");
     model.put("relation", "本人+子女");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65, "female"));
     model.put("kid", certi.getRandomCertiCode(1, 18));
@@ -64,10 +68,11 @@ public class GetData {
   }
   
   // 驴友旅行意外伤害保险-本人+子女
-  @RequestMapping(value="/LYLX")
+  @RequestMapping(value="/lylx")
   public String GetData_LYLX(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-驴友旅行意外伤害保险");
     model.put("relation", "本人+子女");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
     model.put("kid", certi.getRandomCertiCode(18, 60));
@@ -76,10 +81,11 @@ public class GetData {
   }
   
   // 航空意外险-本人
-  @RequestMapping(value="/HKYW")
+  @RequestMapping(value="/hkyw")
   public String GetData_HKYW(Map<String, String> model) {
     
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-航空意外险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 70));
     return "getdata";
@@ -87,10 +93,11 @@ public class GetData {
   }
   
   // 营运交通意外险-本人
-  @RequestMapping(value="/YYJT")
+  @RequestMapping(value="/yyjt")
   public String GetData_YYJT(Map<String, String> model) {
    
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-营运交通意外险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
     return "getdata";
@@ -98,10 +105,11 @@ public class GetData {
   }
   
   // 公共场所意外险-本人
-  @RequestMapping(value="/GGCS")
+  @RequestMapping(value="/ggcs")
   public String GetData_GGCS(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-公共场所意外险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
     return "getdata";
@@ -109,10 +117,11 @@ public class GetData {
   }
   
   // 私家车意外险-本人
-  @RequestMapping(value="/SJC")
+  @RequestMapping(value="/sjc")
   public String GetData_SJC(Map<String, String> model) {
   
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-私家车意外险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 65));
     return "getdata";
@@ -120,10 +129,11 @@ public class GetData {
   }
   
   // 成人重大疾病保险-本人
-  @RequestMapping(value="/CRZJ")
+  @RequestMapping(value="/crzj")
   public String GetData_CRZJ(Map<String, String> model) {
  
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-成人重大疾病保险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 45));
     return "getdata";
@@ -131,13 +141,14 @@ public class GetData {
   }
   
   // 女性特定疾病保险-本人
-  @RequestMapping(value="/NXJB", method=RequestMethod.GET)
+  @RequestMapping(value="/nxjb", method=RequestMethod.GET)
   public String GetData_NXJB(Map<String, Object> model, 
       @RequestParam(value="minAge", required=false, defaultValue="19") String minAge, 
       @RequestParam(value="maxAge", required=false, defaultValue="45") String maxAge) {
     
     CertinoUtil   certi = new CertinoUtil();
     final String  url   = "http://www.zhongan.com:6080/channel/product/productDetail_100002.html";
+    model.put("title", "初始化参数-女性特定疾病保险");
     model.put("tbrCerti", certi.getRandomCertiCode(
         Integer.valueOf(minAge), 
         Integer.valueOf(maxAge), 
@@ -150,15 +161,15 @@ public class GetData {
 
   }
   
-  // 未成年重大疾病保险-子女
-  @RequestMapping(value="/ETZJ", method=RequestMethod.GET)
+  // 未成年人重大疾病保险-子女
+  @RequestMapping(value="/etzj", method=RequestMethod.GET)
   public String GetData_ETZJ(Map<String, String> model,
       @RequestParam(value="minAge", required=false, defaultValue="1") String minAge,
       @RequestParam(value="maxAge", required=false, defaultValue="17") String maxAge) {
   
     CertinoUtil   certi = new CertinoUtil();
     final String  url   = "http://www.zhongan.com:6080/channel/product/productDetail_100001.html";
-    
+    model.put("title", "初始化参数-未成年人重大疾病保险");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
     model.put("tbrPhone", "13108130002");
     model.put("tbrEmail", "13108130002@qq.com");
@@ -173,10 +184,11 @@ public class GetData {
   }
   
   // 儿童齿科医疗保险-子女
-  @RequestMapping(value="/ETCK")
+  @RequestMapping(value="/etck")
   public String GetData_ETCK(Map<String, String> model) {
  
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-儿童齿科医疗保险");
     model.put("relation", "子女");
     model.put("tbrCerti", certi.getRandomCertiCode());
     model.put("kid", certi.getRandomCertiCode(4, 15));
@@ -185,10 +197,11 @@ public class GetData {
   }
   
   // 母婴健康保险-本人
-  @RequestMapping(value="/MYJK")
+  @RequestMapping(value="/myjk")
   public String GetData_MYJK(Map<String, String> model) {
 
     CertinoUtil certi = new CertinoUtil();
+    model.put("title", "初始化参数-母婴健康保险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(20, 35, "female"));
     return "getdata";
