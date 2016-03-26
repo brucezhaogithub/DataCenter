@@ -2,11 +2,14 @@ package pers.wenzi.datacenter.web;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import pers.wenzi.datacenter.entity.Product100002;
 import pers.wenzi.datacenter.util.CertinoUtil;
 
 /**
@@ -16,7 +19,38 @@ import pers.wenzi.datacenter.util.CertinoUtil;
 
 @Controller
 @RequestMapping(value="/getdata")
+@EnableConfigurationProperties(Product100002.class)
 public class GetData {
+  
+  @Autowired
+  private Product100002 product100002;
+  
+  /*
+   * 女性特定疾病保险
+   */
+  @RequestMapping(value="/nxjb")
+  public String getDataProduct100002(Map<String, String> model) {
+    
+    CertinoUtil certi = new CertinoUtil();
+    model.put("title",    product100002.getTitle());
+    model.put("relation", product100002.getRelation());
+    model.put("tbrName",  product100002.getTbrName());
+    model.put("tbrCerti", certi.getRandomCertiCode(
+                          product100002.getTbrMinAge(), 
+                          product100002.getTbrMaxAge(), 
+                          "female"));
+    model.put("tbrPhone", product100002.getTbrPhone());
+    model.put("tbrEmail", product100002.getTbrEmail());
+    model.put("bbrName",  product100002.getBbrName());
+    model.put("bbrCerti", certi.getRandomCertiCode(
+                          product100002.getBbrMinAge(), 
+                          product100002.getBbrMaxAge(), 
+                          "female"));
+    model.put("bbrPhone", product100002.getBbrPhone());
+    model.put("url",      product100002.getUrl());  
+    return "getdata";
+    
+  }
   
   // 银行卡盗刷资金损失保险-本人
   @RequestMapping(value="/yhds")
@@ -141,7 +175,8 @@ public class GetData {
   }
   
   // 女性特定疾病保险-本人
-  @RequestMapping(value="/nxjb", method=RequestMethod.GET)
+  @Deprecated
+  @RequestMapping(value="/nxjb0325", method=RequestMethod.GET)
   public String GetData_NXJB(Map<String, Object> model, 
       @RequestParam(value="minAge", required=false, defaultValue="19") String minAge, 
       @RequestParam(value="maxAge", required=false, defaultValue="45") String maxAge) {
