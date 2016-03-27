@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import pers.wenzi.datacenter.entity.Product100002;
+import pers.wenzi.datacenter.product.Product100002;
 import pers.wenzi.datacenter.util.CertinoUtil;
 
 /**

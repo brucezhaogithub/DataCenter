@@ -7,7 +7,7 @@ import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletCon
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
-import pers.wenzi.datacenter.entity.Product100002;
+import pers.wenzi.datacenter.product.Product100002;
 
 /**
  * itest自动化测试框架数据银行主入口

@@ -1,4 +1,4 @@
-package pers.wenzi.datacenter.entity;
+package pers.wenzi.datacenter.product;
 
 import javax.validation.constraints.NotNull;
 
