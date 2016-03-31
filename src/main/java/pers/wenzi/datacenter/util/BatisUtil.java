@@ -14,12 +14,6 @@ public class BatisUtil {
   
   private static SqlSessionFactory factory;
   
-  private static class BatisUtilHolder {
-    
-    private static final BatisUtil INSTANCE = new BatisUtil();
-    
-  }
-  
   private BatisUtil() {
     
     if (factory == null) {
@@ -33,6 +27,12 @@ public class BatisUtil {
       }
       factory = new SqlSessionFactoryBuilder().build(reader);
     }
+    
+  }
+  
+  private static class BatisUtilHolder {
+    
+    private static final BatisUtil INSTANCE = new BatisUtil();
     
   }
   
