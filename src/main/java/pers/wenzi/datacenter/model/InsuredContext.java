@@ -2,6 +2,8 @@ package pers.wenzi.datacenter.model;
 
 public class InsuredContext {
   
+  private String title;
+  private String relation;
   private String tbrName;
   private String tbrCerti;
   private String tbrPhone;
@@ -14,6 +16,18 @@ public class InsuredContext {
   /*
    * getter method
    */
+  
+  public String getTitle() {
+    
+    return title;
+    
+  }
+  
+  public String getRelation() {
+    
+    return relation;
+    
+  }
   
   public String getTbrName() {
     
@@ -66,6 +80,18 @@ public class InsuredContext {
   /*
    * setter method
    */
+  
+  public void setTitle(String title) {
+    
+    this.title = title;
+    
+  }
+  
+  public void setRelation(String relation) {
+    
+    this.relation = relation;
+    
+  }
   
   public void setTbrName(String tbrName) {
     
