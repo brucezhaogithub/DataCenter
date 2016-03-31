@@ -1,18 +1,18 @@
-package pers.wenzi.datacenter.entity;
+package pers.wenzi.datacenter.model;
 
-public class PolicyEntity extends Entity {
-
-  private String policyId;
+public class Policy {
+  
+  private int policyId;
   private String policyNo;
   private String productId;
   private String packageDefId;
   private String campaignDefId;
   
   /*
-   * Get Method
+   * getter method
    */
   
-  public String getPolicyId() {
+  public int getPolicyId() {
     
     return policyId;
     
@@ -29,24 +29,24 @@ public class PolicyEntity extends Entity {
     return productId;
     
   }
-
+  
   public String getPackageDefId() {
-  
+    
     return packageDefId;
-  
+    
   }
-
+  
   public String getCampaignDefId() {
-  
+    
     return campaignDefId;
-  
+    
   }
   
   /*
-   * Set Method
+   * setter method
    */
   
-  public void setPolicyId(String policyId) {
+  public void setPolicyId(int policyId) {
     
     this.policyId = policyId;
     
@@ -63,17 +63,17 @@ public class PolicyEntity extends Entity {
     this.productId = productId;
     
   }
-
+  
   public void setPackageDefId(String packageDefId) {
-  
+    
     this.packageDefId = packageDefId;
-  
+    
   }
-
+  
   public void setCampaignDefId(String campaignDefId) {
-  
+    
     this.campaignDefId = campaignDefId;
-  
+    
   }
   
 }

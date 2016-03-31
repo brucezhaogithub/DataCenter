@@ -2,46 +2,34 @@ package pers.wenzi.datacenter.web;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import pers.wenzi.datacenter.asserts.PolicyAssert;
-import pers.wenzi.datacenter.dao.SessionFactory;
-import pers.wenzi.datacenter.entity.Entity;
-import pers.wenzi.datacenter.entity.PolicyEntity;
-import pers.wenzi.datacenter.util.ProductUtil;
+import pers.wenzi.datacenter.model.Policy;
+import pers.wenzi.datacenter.service.PolicyService;
 
 @Controller
-@RequestMapping(value="/CheckData")
+@RequestMapping(value="/checkdata")
 public class CheckData {
   
-  Entity policyEntity;
+  Policy policy;
+  
+  @Autowired
+  private PolicyService policyService;
   
   // 官网-女性疾病-数据校验
   @RequestMapping(value="/online/nxjb/{policyNo}", method=RequestMethod.GET)
-  public String submitData(Map<String, String> model, 
+  public String checkNXJB(Map<String, String> map, 
       @PathVariable("policyNo") String policyNo) {
     
-    String stmt   = "pers.wenzi.datacenter.mapper.PolicyMapper.selectPolicy";
-    policyEntity  = SessionFactory.getSessionEntity(new PolicyEntity(), stmt, policyNo);
-    model.put("policyNo", policyEntity.getPolicyNo());
-    model.put("productId", 
-              PolicyAssert.AssertToString(
-                  "productId", 
-                  policyEntity.getProductId(), 
-                  ProductUtil.ONLINE_NXJB_PRODUCTID));
-    model.put("packageDefId", 
-              PolicyAssert.AssertToString(
-                  "packageDefId", 
-                  policyEntity.getPackageDefId(), 
-                  ProductUtil.ONLINE_NXJB_PACKAGEDEFID));
-    model.put("campaignDefId", 
-              PolicyAssert.AssertToString(
-                  "campaignDefId", 
-                  policyEntity.getPackageDefId(), 
-                  ProductUtil.ONLINE_NXJB_CAMPAIGNDEFID));
+    policy = policyService.selectPolicy(policyNo);
+    map.put("policyNo",       policyNo);
+    map.put("productId",      policy.getProductId());
+    map.put("packageDefId",   policy.getPackageDefId());
+    map.put("campaignDefId",  policy.getCampaignDefId());
     return "checkdata";
     
   }

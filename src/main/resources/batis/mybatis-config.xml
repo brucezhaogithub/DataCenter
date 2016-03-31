@@ -20,7 +20,7 @@
   </settings>
   
   <typeAliases>
-    <typeAlias alias="PolicyEntity" type="pers.wenzi.datacenter.entity.PolicyEntity" />
+    <typeAlias alias="Policy" type="pers.wenzi.datacenter.model.Policy" />
   </typeAliases>
   
   <environments default="dev">

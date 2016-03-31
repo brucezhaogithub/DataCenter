@@ -1,47 +1,50 @@
 package pers.wenzi.datacenter.util;
 
-import javax.sql.DataSource;
+import java.io.IOException;
+import java.io.Reader;
 
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BatisUtil {
   
-  private SqlSessionFactory sqlSessionFactory;
-  private static BatisUtil batisUtil;
+  private static SqlSessionFactory factory;
   
-  private BatisUtil(DataSource dataSource) {
+  private static class BatisUtilHolder {
     
-    System.out.println("--------------------------BatisUtil initialize-----------------------"); 
-    SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-    sqlSessionFactoryBean.setDataSource(dataSource);
-    PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-    try {
+    private static final BatisUtil INSTANCE = new BatisUtil();
+    
+  }
+  
+  private BatisUtil() {
+    
+    if (factory == null) {
       String resource = "batis/mybatis-config.xml";
-      sqlSessionFactoryBean.setMapperLocations(resolver.getResources(resource));
-      sqlSessionFactory = sqlSessionFactoryBean.getObject();
-    }catch (Exception e) {
-      throw new RuntimeException("BatisUtil init Error:" + e.getMessage());
-    }
-    
-  }
-  
-  public static BatisUtil getInstance(DataSource dataSource) {
-    
-    synchronized(dataSource) {
-      if (batisUtil == null) {
-        batisUtil = new BatisUtil(dataSource);
+      Reader reader   = null;
+      try {
+        reader = Resources.getResourceAsReader(resource);
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
       }
+      factory = new SqlSessionFactoryBuilder().build(reader);
     }
-    return batisUtil;
     
   }
   
-  public SqlSession getSession() throws Exception {
+  public static final BatisUtil getInstance() {
     
-    return sqlSessionFactory.openSession();
+    return BatisUtilHolder.INSTANCE;
+    
+  }
+  
+  public static SqlSession openSession() {
+    
+    return factory.openSession();
     
   }
   
