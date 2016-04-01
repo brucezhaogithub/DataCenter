@@ -1,6 +1,6 @@
 package pers.wenzi.datacenter.util;
 
-public class ProductUtil {
+public class TextUtil {
   
   /*
    * 渠道：官网
