@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
 
-public class CertinoUtil {
+public class CertiUtil {
 
   private int     minAge = 18;
   private int     maxAge = 60;
