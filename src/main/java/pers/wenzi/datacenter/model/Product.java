@@ -1,6 +1,6 @@
 package pers.wenzi.datacenter.model;
 
-public class InsuredContext {
+public class Product {
   
   private String title;
   private String relation;
