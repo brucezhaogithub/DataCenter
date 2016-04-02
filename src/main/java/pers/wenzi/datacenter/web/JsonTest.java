@@ -65,16 +65,24 @@ public class JsonTest {
   
   public String getJsonObject() {
     
-    JSONObject  jsonObject  = JSONObject.fromObject(readJsonFile());
-    JSONArray   products    = jsonObject.getJSONArray("product");
-    for (int i=0;i<products.size();i++) {
-      JSONArray product = products.getJSONArray(i);
-      for (int j=0;j<product.size();j++) {
-        JSONArray properties = product.getJSONArray(j);
-        for (int k=0;k<properties.size();k++) {
-          System.out.println(properties.getString(k));
-        }
-      }
+    JSONObject rootObj = JSONObject.fromObject(readJsonFile());
+    JSONArray  prodAry = rootObj.getJSONArray("product");
+    System.out.println(prodAry.size());
+    for (int i=0;i<prodAry.size();i++) {
+//      JSONObject prods = JSONObject.fromObject(product.getString(i));
+//      JSONObject props = prods.fromObject(prods);
+      System.out.println(prodAry.getString(i));
+      
+//      JSONArray product = JSONArray.fromObject(products.getString(i));
+//      System.out.println(product.getString(i));
+//      JSONArray product = products.getJSONArray("nxjb");
+//      System.out.println(product.toString());
+//      for (int j=0;j<product.size();j++) {
+//        JSONArray properties = product.getJSONArray(j);
+//        for (int k=0;k<properties.size();k++) {
+//          System.out.println(properties.getString(k));
+//        }
+//      }
     }
     return "hello";
     
