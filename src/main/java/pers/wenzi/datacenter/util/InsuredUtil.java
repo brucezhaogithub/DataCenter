@@ -8,18 +8,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.springframework.stereotype.Component;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-@Component
-public class ProductUtil {
+public class InsuredUtil {
   
   private String jsonStr = "";
-  private static Map<String, String> jsonMap = new HashMap<String, String>();
+  private Map<String, String> jsonMap = new HashMap<String, String>();
   
-  private ProductUtil() {
+  public InsuredUtil() {
     
     getJson();
     getMap();
@@ -67,7 +64,7 @@ public class ProductUtil {
     
   }
   
-  public static String getValue(String key) {
+  public String getValue(String key) {
     
     return jsonMap.get(key);
     
