@@ -16,13 +16,11 @@ import net.sf.json.JSONObject;
 @Component
 public class ProductUtil {
   
-  private String jsonStr;
-  private static Map<String, String> jsonMap;
+  private String jsonStr = "";
+  private static Map<String, String> jsonMap = new HashMap<String, String>();
   
   private ProductUtil() {
     
-    jsonStr = "";
-    jsonMap = new HashMap<String, String>();
     getJson();
     getMap();
     
@@ -30,12 +28,11 @@ public class ProductUtil {
   
   private void getJson() {
     
-    String tempStr;
     File file = new File("product.json");
     BufferedReader reader = null;
     try {
       reader  = new BufferedReader(new FileReader(file));
-      jsonStr = tempStr = "";
+      String tempStr = "";
       while ((tempStr = reader.readLine()) != null) {
         jsonStr = jsonStr + tempStr;
       }

@@ -20,11 +20,12 @@ import pers.wenzi.datacenter.util.CertiUtil;
 @RequestMapping(value="/getdata")
 public class GetData {
   
+  CertiUtil certi = new CertiUtil();
+  
   // 银行卡盗刷资金损失保险-本人
   @RequestMapping(value="/yhds")
   public String GetData_YHDS(Map<String, String> model) {
     
-    CertiUtil certi = new CertiUtil();
     model.put("title", "初始化参数-银行卡盗刷资金损失保险");
     model.put("relation", "本人");
     model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
