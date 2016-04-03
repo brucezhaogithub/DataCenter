@@ -1,0 +1,40 @@
+{
+"product":{
+    "nxjb.title":"女性特定疾病保险",
+	"nxjb.relation":"本人",
+    "nxjb.tbrName":"安安测试",
+	"nxjb.tbrMinAge":"19",
+	"nxjb.tbrMaxAge":"44",
+	"nxjb.tbrPhone":"13108130001",
+	"nxjb.tbrEmail":"13108130001@zhongan.com",
+	"nxjb.url":"https://www.zhongan.com:6080/channel/product/productDetail_100002.html"
+  },
+"product":{
+    "etzj.plana.title":"未成年人重大疾病保险",
+	"etzj.plana.relation":"子女",
+    "etzj.plana.tbrName":"安安测试",
+	"etzj.plana.tbrMinAge":"19",
+	"etzj.plana.tbrMaxAge":"44",
+	"etzj.plana.tbrPhone":"13108130002",
+	"etzj.plana.tbrEmail":"13108130002@zhongan.com",
+	"etzj.plana.bbrName":"安安子女",
+	"etzj.plana.bbrMinAge":"1",
+	"etzj.plana.bbrMaxAge":"16",
+	"etzj.plana.bbrPhone":"13108130002",
+	"etzj.plana.url":"https://www.zhongan.com:6080/channel/product/productDetail_100001.html"
+  },
+"product":{
+    "etzj.planb.title":"未成年人重大疾病保险",
+	"etzj.planb.relation":"子女",
+    "etzj.planb.tbrName":"安安测试",
+	"etzj.planb.tbrMinAge":"19",
+	"etzj.planb.tbrMaxAge":"44",
+	"etzj.planb.tbrPhone":"13108130003",
+	"etzj.planb.tbrEmail":"13108130003@zhongan.com",
+	"etzj.planb.bbrName":"安安子女",
+	"etzj.planb.bbrMinAge":"1",
+	"etzj.planb.bbrMaxAge":"16",
+	"etzj.planb.bbrPhone":"13108130003",
+	"etzj.planb.url":"https://www.zhongan.com:6080/channel/product/productDetail_100001.html"
+  }
+}
