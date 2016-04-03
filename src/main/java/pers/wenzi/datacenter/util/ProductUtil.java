@@ -31,7 +31,7 @@ public class ProductUtil {
   private void getJson() {
     
     String tempStr;
-    File file = new File("E://product.json");
+    File file = new File("product.json");
     BufferedReader reader = null;
     try {
       reader  = new BufferedReader(new FileReader(file));
