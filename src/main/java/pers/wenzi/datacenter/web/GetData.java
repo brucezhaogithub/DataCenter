@@ -1,15 +1,14 @@
 package pers.wenzi.datacenter.web;
 
+import static pers.wenzi.datacenter.util.ProductUtil.getValue;
+
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import pers.wenzi.datacenter.product.Product100002;
 import pers.wenzi.datacenter.util.CertiUtil;
 
 /**
@@ -19,38 +18,7 @@ import pers.wenzi.datacenter.util.CertiUtil;
 
 @Controller
 @RequestMapping(value="/getdata")
-@EnableConfigurationProperties(Product100002.class)
 public class GetData {
-  
-  @Autowired
-  private Product100002 product100002;
-  
-  /*
-   * 女性特定疾病保险
-   */
-  @RequestMapping(value="/nxjb")
-  public String getDataProduct100002(Map<String, String> model) {
-    
-    CertiUtil certi = new CertiUtil();
-    model.put("title",    product100002.getTitle());
-    model.put("relation", product100002.getRelation());
-    model.put("tbrName",  product100002.getTbrName());
-    model.put("tbrCerti", certi.getRandomCertiCode(
-                          product100002.getTbrMinAge(), 
-                          product100002.getTbrMaxAge(), 
-                          "female"));
-    model.put("tbrPhone", product100002.getTbrPhone());
-    model.put("tbrEmail", product100002.getTbrEmail());
-    model.put("bbrName",  product100002.getBbrName());
-    model.put("bbrCerti", certi.getRandomCertiCode(
-                          product100002.getBbrMinAge(), 
-                          product100002.getBbrMaxAge(), 
-                          "female"));
-    model.put("bbrPhone", product100002.getBbrPhone());
-    model.put("url",      product100002.getUrl());  
-    return "getdata";
-    
-  }
   
   // 银行卡盗刷资金损失保险-本人
   @RequestMapping(value="/yhds")
@@ -174,46 +142,53 @@ public class GetData {
  
   }
   
-  // 女性特定疾病保险-本人
-  @Deprecated
-  @RequestMapping(value="/nxjb0325", method=RequestMethod.GET)
-  public String GetData_NXJB(Map<String, Object> model, 
-      @RequestParam(value="minAge", required=false, defaultValue="19") String minAge, 
-      @RequestParam(value="maxAge", required=false, defaultValue="45") String maxAge) {
+  /*
+   * 女性特定疾病保险
+   * 与投保人关系：本人
+   */
+  @RequestMapping(value="/nxjb")
+  public String getProduct001(Map<String, String> model) {
     
-    CertiUtil   certi = new CertiUtil();
-    final String  url   = "http://www.zhongan.com:6080/channel/product/productDetail_100002.html";
-    model.put("title", "初始化参数-女性特定疾病保险");
+    CertiUtil certi = new CertiUtil();
+    model.put("title",    getValue("nxjb.title"));
+    model.put("relation", getValue("nxjb.relation"));
+    model.put("tbrName",  getValue("nxjb.tbrName"));
     model.put("tbrCerti", certi.getRandomCertiCode(
-        Integer.valueOf(minAge), 
-        Integer.valueOf(maxAge), 
-        "female"));
-    model.put("tbrPhone", "13108130001");
-    model.put("tbrEmail", "13108130001@qq.com");
-    model.put("relation", "本人");
-    model.put("url", url);
+                          Integer.valueOf(getValue("nxjb.tbrMinAge")), 
+                          Integer.valueOf(getValue("nxjb.tbrMaxAge")), 
+                          "female"));
+    model.put("tbrPhone", getValue("nxjb.tbrPhone"));
+    model.put("tbrEmail", getValue("nxjb.tbrEmail"));
+    model.put("url",      getValue("nxjb.url"));
     return "getdata";
-
+    
   }
   
-  // 未成年人重大疾病保险-子女
+  /*
+   * 未成年人重大疾病保险
+   * 产品版型：经典
+   * 与投保人关系：子女
+   */
   @RequestMapping(value="/etzj", method=RequestMethod.GET)
-  public String GetData_ETZJ(Map<String, String> model,
+  public String getProduct002(Map<String, String> model,
       @RequestParam(value="minAge", required=false, defaultValue="1") String minAge,
       @RequestParam(value="maxAge", required=false, defaultValue="17") String maxAge) {
   
     CertiUtil   certi = new CertiUtil();
-    final String  url   = "http://www.zhongan.com:6080/channel/product/productDetail_100001.html";
-    model.put("title", "初始化参数-未成年人重大疾病保险");
-    model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
-    model.put("tbrPhone", "13108130002");
-    model.put("tbrEmail", "13108130002@qq.com");
-    model.put("relation", "子女");
+    model.put("title",    getValue("etzj.plana.title"));
+    model.put("relation", getValue("etzj.plana.relation"));
+    model.put("tbrName",  getValue("etzj.plana.tbrName"));
+    model.put("tbrCerti", certi.getRandomCertiCode(
+                          Integer.valueOf(getValue("etzj.plana.tbrMinAge")), 
+                          Integer.valueOf(getValue("etzj.plana.tbrMaxAge"))));
+    model.put("tbrPhone", getValue("etzj.plana.tbrPhone"));
+    model.put("tbrEmail", getValue("etzj.plana.tbrEmail"));
+    model.put("bbrName",  getValue("etzj.plana.bbrName"));
     model.put("bbrCerti", certi.getRandomCertiCode(
-        Integer.valueOf(minAge), 
-        Integer.valueOf(maxAge)));
-    model.put("bbrPhone", "13108130002");
-    model.put("url", url);
+                          Integer.valueOf(getValue("etzj.plana.bbrMinAge")), 
+                          Integer.valueOf(getValue("etzj.plana.bbrMaxAge"))));
+    model.put("bbrPhone", getValue("etzj.plana.bbrPhone"));
+    model.put("url",      getValue("etzj.plana.url"));
     return "getdata";
   
   }
