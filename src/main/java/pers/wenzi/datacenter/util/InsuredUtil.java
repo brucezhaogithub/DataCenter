@@ -2,8 +2,11 @@ package pers.wenzi.datacenter.util;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -25,10 +28,13 @@ public class InsuredUtil {
   
   private void getJson() {
     
-    File file = new File("product.json");
-    BufferedReader reader = null;
+    FileInputStream   file    = null;
+    InputStreamReader stream  = null;
+    BufferedReader    reader  = null;
     try {
-      reader  = new BufferedReader(new FileReader(file));
+      file    = new FileInputStream("product.json");
+      stream  = new InputStreamReader(file, "utf-8");
+      reader  = new BufferedReader(stream);
       String tempStr = "";
       while ((tempStr = reader.readLine()) != null) {
         jsonStr = jsonStr + tempStr;
