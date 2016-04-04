@@ -22,13 +22,22 @@ public class GetData {
   InsuredUtil insured = new InsuredUtil();
   CertiUtil   certi   = new CertiUtil();
   
-  // 银行卡盗刷资金损失保险-本人
-  @RequestMapping(value="/yhds")
-  public String GetData_YHDS(Map<String, String> model) {
+  /*
+   * 银行卡盗刷资金损失保险
+   * 与投保人关系：本人
+   */
+  @RequestMapping(value="/yhds/plana")
+  public String GetDataForYhdsPlana(Map<String, String> model) {
     
-    model.put("title", "初始化参数-银行卡盗刷资金损失保险");
-    model.put("relation", "本人");
-    model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
+    model.put("title",    insured.getValue("yhds.plana.title"));
+    model.put("relation", insured.getValue("yhds.plana.relation"));
+    model.put("tbrName",  insured.getValue("yhds.plana.tbrName"));
+    model.put("tbrCerti", certi.getRandomCertiCode(
+                          Integer.valueOf(insured.getValue("yhds.plana.tbrMinAge")), 
+                          Integer.valueOf(insured.getValue("yhds.plana.tbrMaxAge"))));
+    model.put("tbrPhone", insured.getValue("yhds.plana.tbrPhone"));
+    model.put("tbrEmail", insured.getValue("yhds.plana.tbrEmail"));
+    model.put("url",      insured.getValue("yhds.plana.url"));
     return "getdata";
     
   }

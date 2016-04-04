@@ -1,6 +1,6 @@
 package pers.wenzi.datacenter.model;
 
-public class Product {
+public class Expect {
   
   private String title;
   private String relation;
