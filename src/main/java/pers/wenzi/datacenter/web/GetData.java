@@ -19,8 +19,8 @@ import pers.wenzi.datacenter.util.InsuredUtil;
 @RequestMapping(value="/getdata")
 public class GetData {
   
-  InsuredUtil insured = new InsuredUtil();
-  CertiUtil   certi   = new CertiUtil();
+  InsuredUtil insured = new InsuredUtil();  // 初始化投被保人脚本数据
+  CertiUtil   certi   = new CertiUtil();    // 初始化身份证号生成工具
   
   /*
    * 银行卡盗刷资金损失保险
