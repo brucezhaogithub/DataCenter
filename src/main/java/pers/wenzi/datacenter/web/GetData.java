@@ -24,6 +24,7 @@ public class GetData {
   
   /*
    * 银行卡盗刷资金损失保险
+   * 产品版型：经典版
    * 与投保人关系：本人
    */
   @RequestMapping(value="/yhds/plana")
@@ -169,7 +170,7 @@ public class GetData {
    * 产品版型：经典
    * 与投保人关系：子女
    */
-  @RequestMapping(value="/etzj", method=RequestMethod.GET)
+  @RequestMapping(value="/etzj")
   public String getProduct002(Map<String, String> model,
       @RequestParam(value="minAge", required=false, defaultValue="1") String minAge,
       @RequestParam(value="maxAge", required=false, defaultValue="17") String maxAge) {
