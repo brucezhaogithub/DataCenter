@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "xmlspec.dtd">  -->
 <configuration>
-    <!-- 控制台输出 -->   
+    <!-- 标准输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- 日志输出编码 -->     
-        <layout class="ch.qos.logback.classic.PatternLayout">   
-             <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--> 
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>   
-        </layout>   
+        <!-- 日志输出编码 -->
+        <encoder>
+            <pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</pattern>  
+        </encoder>
     </appender>
     
-    <logger name="pers.wenzi.datacenter" level="TRACE"/>
-    
     <!-- 日志输出级别 -->
-    <root level="INFO">   
-        <appender-ref ref="STDOUT" />     
+    <root>
+        <level value="INFO" />
+        <level value="DEBUG" />
+        <appender-ref ref="STDOUT" />
     </root>
 </configuration>
