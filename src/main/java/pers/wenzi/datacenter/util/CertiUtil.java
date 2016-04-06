@@ -117,13 +117,14 @@ public class CertiUtil {
   //随机生成出生年月
   private String getRandomBirthCode() {
     
-    String birthCode = null;
-    Calendar cal = Calendar.getInstance();
-    int minYear = cal.get(Calendar.YEAR) - maxAge;
-    int maxYear = cal.get(Calendar.YEAR) - minAge;
-    int Year    = new Random().nextInt(maxYear) % (maxYear - minYear + 1) + minYear;
-    int Month   = new Random().nextInt(12);
-    int Date    = new Random().nextInt(28);
+    Random random     = new Random();
+    String birthCode  = null;
+    Calendar cal      = Calendar.getInstance();
+    int minYear       = cal.get(Calendar.YEAR) - maxAge;
+    int maxYear       = cal.get(Calendar.YEAR) - minAge;
+    int Year          = random.nextInt(maxYear) % (maxYear - minYear + 1) + minYear;
+    int Month         = random.nextInt(12);
+    int Date          = random.nextInt(28);
     cal.set(Year, Month, Date);
     birthCode = new SimpleDateFormat("yyyyMMdd").format(cal.getTime());
     return birthCode;
@@ -133,18 +134,19 @@ public class CertiUtil {
   //随机生成顺序号
   private String getRandomOrderCode() {
     
+    Random  random    = new Random();
     String  orderCode = null;
     String  orderNum1 = Integer.toString(new Random().nextInt(9));
     String  orderNum2 = Integer.toString(new Random().nextInt(9));
-    int     num3      = new Random().nextInt(9);
+    int     num3      = random.nextInt(9);
     if ("female".equals(this.gender)) {
       do {
-        num3 = new Random().nextInt(9);
+        num3 = random.nextInt(9);
       } while(num3 % 2 != 0);
     }
     String orderNum3  = Integer.toString(num3);
     orderCode         = orderNum1 + orderNum2 + orderNum3;
-    this.gender = "random";
+    this.gender       = "random";
     return orderCode;
     
   }

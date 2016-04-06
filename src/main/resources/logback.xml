@@ -12,7 +12,7 @@
     <!-- 日志输出级别 -->
     <root>
         <level value="INFO" />
-        <level value="DEBUG" />
+        <!-- <level value="DEBUG" /> -->
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
