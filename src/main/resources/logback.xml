@@ -3,7 +3,6 @@
 <configuration>
     <!-- 标准日志设置 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-      <!-- 日志输出编码 -->
       <encoder>
         <pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</pattern>  
       </encoder>
@@ -11,9 +10,9 @@
     
     <!-- 文件日志设置 -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-      <file>/logs/datacenter.log</file>
+      <file>/alidata1/3080/datacenter/logs/datacenter.log</file>
       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-        <fileNamePattern>/logs/datacenter-%d{yyyy-MM-dd}.log</fileNamePattern>
+        <fileNamePattern>/alidata1/3080/datacenter/logs/datacenter-%d{yyyy-MM-dd}.log</fileNamePattern>
         <maxHistory>30</maxHistory>
       </rollingPolicy>
       <layout class="ch.qos.logback.classic.PatternLayout">
@@ -22,7 +21,7 @@
     </appender>
     
     <!-- 日志输出级别 -->
-    <root level="warn">
+    <root level="WARN">
       <appender-ref ref="STDOUT" />
       <appender-ref ref="FILE" />
     </root>

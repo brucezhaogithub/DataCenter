@@ -2,6 +2,8 @@ package pers.wenzi.datacenter.web;
 
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +20,7 @@ import pers.wenzi.datacenter.util.InsuredUtil;
 @RequestMapping(value="/getdata")
 public class GetData {
   
+  private final static Logger logger = LoggerFactory.getLogger(GetData.class);
   InsuredUtil insured = new InsuredUtil();  // 初始化投被保人脚本数据
   CertiUtil   certi   = new CertiUtil();    // 初始化身份证号生成工具
   
@@ -38,6 +41,7 @@ public class GetData {
     model.put("tbrPhone", insured.getValue("yhds.plana.tbrPhone"));
     model.put("tbrEmail", insured.getValue("yhds.plana.tbrEmail"));
     model.put("url",      insured.getValue("yhds.plana.url"));
+    logger.info("银行卡盗刷资金损失保险-经典版-数据获取完成");
     return "getdata";
     
   }
@@ -59,6 +63,7 @@ public class GetData {
     model.put("tbrPhone", insured.getValue("yhds.planb.tbrPhone"));
     model.put("tbrEmail", insured.getValue("yhds.planb.tbrEmail"));
     model.put("url",      insured.getValue("yhds.planb.url"));
+    logger.info("银行卡盗刷资金损失保险-尊享版-数据获取完成");
     return "getdata";
     
   }
@@ -80,6 +85,7 @@ public class GetData {
     model.put("tbrPhone", insured.getValue("yhds.planc.tbrPhone"));
     model.put("tbrEmail", insured.getValue("yhds.planc.tbrEmail"));
     model.put("url",      insured.getValue("yhds.planc.url"));
+    logger.info("银行卡盗刷资金损失保险-土豪版-数据获取完成");
     return "getdata";
     
   }
@@ -202,6 +208,7 @@ public class GetData {
     model.put("tbrPhone", insured.getValue("nxjb.tbrPhone"));
     model.put("tbrEmail", insured.getValue("nxjb.tbrEmail"));
     model.put("url",      insured.getValue("nxjb.url"));
+    logger.info("女性特定疾病保险-数据获取完成");
     return "getdata";
     
   }
