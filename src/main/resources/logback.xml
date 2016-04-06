@@ -12,7 +12,7 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
       <file>/logs/datacenter.log</file>
       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-        <fileNamePattern>archive/datacenter-%d{yyyy-MM-dd}.log</fileNamePattern>
+        <fileNamePattern>/logs/datacenter-%d{yyyy-MM-dd}.log</fileNamePattern>
         <maxHistory>30</maxHistory>
       </rollingPolicy>
       <layout class="ch.qos.logback.classic.PatternLayout">
