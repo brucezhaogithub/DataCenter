@@ -42,6 +42,48 @@ public class GetData {
     
   }
   
+  /*
+   * 银行卡盗刷资金损失保险
+   * 产品版型：尊享版
+   * 与投保人关系：本人
+   */
+  @RequestMapping(value="/yhds/planb")
+  public String GetDataForYhdsPlanb(Map<String, String> model) {
+    
+    model.put("title",    insured.getValue("yhds.planb.title"));
+    model.put("relation", insured.getValue("yhds.planb.relation"));
+    model.put("tbrName",  insured.getValue("yhds.planb.tbrName"));
+    model.put("tbrCerti", certi.getRandomCertiCode(
+                          Integer.valueOf(insured.getValue("yhds.planb.tbrMinAge")), 
+                          Integer.valueOf(insured.getValue("yhds.planb.tbrMaxAge"))));
+    model.put("tbrPhone", insured.getValue("yhds.planb.tbrPhone"));
+    model.put("tbrEmail", insured.getValue("yhds.planb.tbrEmail"));
+    model.put("url",      insured.getValue("yhds.planb.url"));
+    return "getdata";
+    
+  }
+  
+  /*
+   * 银行卡盗刷资金损失保险
+   * 产品版型：土豪版
+   * 与投保人关系：本人
+   */
+  @RequestMapping(value="/yhds/planc")
+  public String GetDataForYhdsPlanc(Map<String, String> model) {
+    
+    model.put("title",    insured.getValue("yhds.planc.title"));
+    model.put("relation", insured.getValue("yhds.planc.relation"));
+    model.put("tbrName",  insured.getValue("yhds.planc.tbrName"));
+    model.put("tbrCerti", certi.getRandomCertiCode(
+                          Integer.valueOf(insured.getValue("yhds.planc.tbrMinAge")), 
+                          Integer.valueOf(insured.getValue("yhds.planc.tbrMaxAge"))));
+    model.put("tbrPhone", insured.getValue("yhds.planc.tbrPhone"));
+    model.put("tbrEmail", insured.getValue("yhds.planc.tbrEmail"));
+    model.put("url",      insured.getValue("yhds.planc.url"));
+    return "getdata";
+    
+  }
+  
   // 多轴飞行器责任保险-本人
   @RequestMapping(value="/dzfx")
   public String GetData_DZFX(Map<String, String> model) {
