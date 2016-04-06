@@ -93,6 +93,10 @@ xmlns="http://maven.apache.org/POM/4.0.0">
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+    </dependency>
     <!-- json 数据解析支持 -->
     <dependency>
       <groupId>net.sf.json-lib</groupId>
