@@ -7,7 +7,7 @@
   "yhds.plana.tbrMaxAge":"59",
   "yhds.plana.tbrPhone":"13108130001",
   "yhds.plana.tbrEmail":"13108130001@zhongan.com",
-  "yhds.plana.url":"https://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
+  "yhds.plana.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
   },
 "product":{
   "yhds.planb.title":"银行卡盗刷资金损失保险-尊享版",
@@ -17,7 +17,7 @@
   "yhds.planb.tbrMaxAge":"59",
   "yhds.planb.tbrPhone":"13108130002",
   "yhds.planb.tbrEmail":"13108130002@zhongan.com",
-  "yhds.planb.url":"https://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
+  "yhds.planb.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
   },
 "product":{
   "yhds.planc.title":"银行卡盗刷资金损失保险-土豪版",
@@ -27,7 +27,7 @@
   "yhds.planc.tbrMaxAge":"59",
   "yhds.planc.tbrPhone":"13108130003",
   "yhds.planc.tbrEmail":"13108130003@zhongan.com",
-  "yhds.planc.url":"https://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
+  "yhds.planc.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
   },
 "product":{
     "nxjb.title":"女性特定疾病保险",
@@ -37,7 +37,7 @@
 	"nxjb.tbrMaxAge":"44",
 	"nxjb.tbrPhone":"13108130004",
 	"nxjb.tbrEmail":"13108130004@zhongan.com",
-	"nxjb.url":"https://www.zhongan.com:6080/channel/product/productDetail_100002.html"
+	"nxjb.url":"http://www.zhongan.com:6080/channel/product/productDetail_100002.html"
   },
 "product":{
   "etzj.plana.title":"未成年人重大疾病保险",
@@ -51,7 +51,7 @@
 	"etzj.plana.bbrMinAge":"1",
 	"etzj.plana.bbrMaxAge":"16",
 	"etzj.plana.bbrPhone":"13108130005",
-	"etzj.plana.url":"https://www.zhongan.com:6080/channel/product/productDetail_100001.html"
+	"etzj.plana.url":"http://www.zhongan.com:6080/channel/product/productDetail_100001.html"
   },
 "product":{
   "etzj.planb.title":"未成年人重大疾病保险",
@@ -65,6 +65,26 @@
 	"etzj.planb.bbrMinAge":"1",
 	"etzj.planb.bbrMaxAge":"16",
 	"etzj.planb.bbrPhone":"13108130006",
-	"etzj.planb.url":"https://www.zhongan.com:6080/channel/product/productDetail_100001.html"
+	"etzj.planb.url":"http://www.zhongan.com:6080/channel/product/productDetail_100001.html"
+  },
+"product":{
+  "zyyl.plana.title":"个人住院医疗保险-无社保",
+  "zyyl.plana.relation":"本人",
+  "zyyl.plana.tbrName":"安安测试",
+  "zyyl.plana.tbrMinAge":"1",
+  "zyyl.plana.tbrMaxAge":"49",
+  "zyyl.plana.tbrPhone":"13108130007",
+  "zyyl.plana.tbrEmail":"13108130007@zhongan.com",
+  "zyyl.plana.url":"http://m.zhongan.com:7080/open/product/productDetail450390034"
+  },
+"product":{
+  "zyyl.planb.title":"个人住院医疗保险-有社保",
+  "zyyl.planb.relation":"本人",
+  "zyyl.planb.tbrName":"安安测试",
+  "zyyl.planb.tbrMinAge":"1",
+  "zyyl.planb.tbrMaxAge":"49",
+  "zyyl.planb.tbrPhone":"13108130008",
+  "zyyl.planb.tbrEmail":"13108130008@zhongan.com",
+  "zyyl.planb.url":"http://m.zhongan.com:7080/open/product/productDetail450390034"
   }
 }

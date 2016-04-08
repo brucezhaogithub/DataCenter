@@ -264,4 +264,48 @@ public class GetData {
 
   }
   
+  /*
+   * 个人住院医疗保险
+   * 产品版型：无社保
+   * 与投保人关系：本人
+   */
+  @RequestMapping(value="/zyyl/plana")
+  public String GetDataForZyylPlana(Map<String, String> model) {
+    
+    model.put("title",    insured.getValue("zyyl.plana.title"));
+    model.put("relation", insured.getValue("zyyl.plana.relation"));
+    model.put("tbrName",  insured.getValue("zyyl.plana.tbrName"));
+    model.put("tbrCerti", certi.getRandomCertiCode(
+                          Integer.valueOf(insured.getValue("zyyl.plana.tbrMinAge")), 
+                          Integer.valueOf(insured.getValue("zyyl.plana.tbrMaxAge"))));
+    model.put("tbrPhone", insured.getValue("zyyl.plana.tbrPhone"));
+    model.put("tbrEmail", insured.getValue("zyyl.plana.tbrEmail"));
+    model.put("url",      insured.getValue("zyyl.plana.url"));
+    logger.info("个人住院医疗保险-无社保-数据获取完成");
+    return "getdata";
+    
+  }
+  
+  /*
+   * 个人住院医疗保险
+   * 产品版型：有社保
+   * 与投保人关系：本人
+   */
+  @RequestMapping(value="/zyyl/planb")
+  public String GetDataForZyylPlanb(Map<String, String> model) {
+    
+    model.put("title",    insured.getValue("zyyl.planb.title"));
+    model.put("relation", insured.getValue("zyyl.planb.relation"));
+    model.put("tbrName",  insured.getValue("zyyl.planb.tbrName"));
+    model.put("tbrCerti", certi.getRandomCertiCode(
+                          Integer.valueOf(insured.getValue("zyyl.planb.tbrMinAge")), 
+                          Integer.valueOf(insured.getValue("zyyl.planb.tbrMaxAge"))));
+    model.put("tbrPhone", insured.getValue("zyyl.planb.tbrPhone"));
+    model.put("tbrEmail", insured.getValue("zyyl.planb.tbrEmail"));
+    model.put("url",      insured.getValue("zyyl.planb.url"));
+    logger.info("个人住院医疗保险-有社保-数据获取完成");
+    return "getdata";
+    
+  }
+  
 }
