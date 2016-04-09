@@ -238,7 +238,7 @@ public class GetData {
     model.put("bbrPhone", insured.getValue("etzj.plana.bbrPhone"));
     model.put("url",      insured.getValue("etzj.plana.url"));
     return "getdata";
-  
+    
   }
   
   // 儿童齿科医疗保险-子女
