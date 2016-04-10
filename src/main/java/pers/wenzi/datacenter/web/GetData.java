@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pers.wenzi.datacenter.util.CertiUtil;
+import pers.wenzi.datacenter.util.CertiUtil2;
 import pers.wenzi.datacenter.util.InsuredUtil;
 
 /**
@@ -23,6 +24,7 @@ public class GetData {
   private final static Logger logger = LoggerFactory.getLogger(GetData.class);
   InsuredUtil insured = new InsuredUtil();  // 初始化投被保人脚本数据
   CertiUtil   certi   = new CertiUtil();    // 初始化身份证号生成工具
+  CertiUtil2  certi2  = new CertiUtil2();
   
   /*
    * 银行卡盗刷资金损失保险
@@ -304,6 +306,28 @@ public class GetData {
     model.put("tbrEmail", insured.getValue("zyyl.planb.tbrEmail"));
     model.put("url",      insured.getValue("zyyl.planb.url"));
     logger.info("个人住院医疗保险-有社保-数据获取完成");
+    return "getdata";
+    
+  }
+  
+  /*
+   * 投保人数据生成
+   * @param minAge
+   * @param maxAge
+   * @param gender
+   */
+  @RequestMapping(value="/tbr")
+  public String GetDataTbr(Map<String, String> model,
+      @RequestParam(value="minAge", required=false, defaultValue="18") String minAge,
+      @RequestParam(value="maxAge", required=false, defaultValue="60") String maxAge,
+      @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
+    
+    model.put("title",    "投保人数据生成");
+    model.put("relation", "本人");
+    model.put("tbrName",  "安安测试");
+    model.put("tbrCerti", certi2.getRandomCertiCode(minAge, maxAge, gender));
+    model.put("tbrPhone", "13108130001");
+    model.put("tbrEmail", "13108130001@zhongan.com");
     return "getdata";
     
   }
