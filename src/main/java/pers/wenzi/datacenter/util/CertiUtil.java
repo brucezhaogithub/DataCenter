@@ -44,7 +44,7 @@ public class CertiUtil {
     
     String certiCode  = null;
     this.minAge       = minAge;
-    this.maxAge       = maxAge;
+    this.maxAge       = maxAge + 1;
     String cityCode   = this.getRandomCityCode();
     String birthCode  = this.getRandomBirthCode();
     String orderCode  = this.getRandomOrderCode();
@@ -59,7 +59,7 @@ public class CertiUtil {
 
     String certiCode  = null;
     this.minAge       = minAge;
-    this.maxAge       = maxAge;
+    this.maxAge       = maxAge + 1;
     this.gender       = gender;
     String cityCode   = this.getRandomCityCode();
     String birthCode  = this.getRandomBirthCode();

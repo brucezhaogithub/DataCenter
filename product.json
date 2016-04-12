@@ -4,7 +4,7 @@
   "yhds.plana.relation":"本人",
   "yhds.plana.tbrName":"安安测试",
   "yhds.plana.tbrMinAge":"18",
-  "yhds.plana.tbrMaxAge":"61",
+  "yhds.plana.tbrMaxAge":"60",
   "yhds.plana.tbrPhone":"13108130001",
   "yhds.plana.tbrEmail":"13108130001@zhongan.com",
   "yhds.plana.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
@@ -14,7 +14,7 @@
   "yhds.planb.relation":"本人",
   "yhds.planb.tbrName":"安安测试",
   "yhds.planb.tbrMinAge":"18",
-  "yhds.planb.tbrMaxAge":"61",
+  "yhds.planb.tbrMaxAge":"60",
   "yhds.planb.tbrPhone":"13108130002",
   "yhds.planb.tbrEmail":"13108130002@zhongan.com",
   "yhds.planb.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
@@ -24,7 +24,7 @@
   "yhds.planc.relation":"本人",
   "yhds.planc.tbrName":"安安测试",
   "yhds.planc.tbrMinAge":"18",
-  "yhds.planc.tbrMaxAge":"61",
+  "yhds.planc.tbrMaxAge":"60",
   "yhds.planc.tbrPhone":"13108130003",
   "yhds.planc.tbrEmail":"13108130003@zhongan.com",
   "yhds.planc.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
@@ -34,7 +34,7 @@
 	"nxjb.relation":"本人",
     "nxjb.tbrName":"安安测试",
 	"nxjb.tbrMinAge":"18",
-	"nxjb.tbrMaxAge":"46",
+	"nxjb.tbrMaxAge":"45",
 	"nxjb.tbrPhone":"13108130004",
 	"nxjb.tbrEmail":"13108130004@zhongan.com",
 	"nxjb.url":"http://www.zhongan.com:6080/channel/product/productDetail_100002.html"
@@ -44,7 +44,7 @@
 	"etzj.plana.relation":"子女",
   "etzj.plana.tbrName":"安安测试",
 	"etzj.plana.tbrMinAge":"18",
-	"etzj.plana.tbrMaxAge":"61",
+	"etzj.plana.tbrMaxAge":"60",
 	"etzj.plana.tbrPhone":"13108130005",
 	"etzj.plana.tbrEmail":"13108130005@zhongan.com",
 	"etzj.plana.bbrName":"安安子女",
@@ -58,7 +58,7 @@
 	"etzj.planb.relation":"子女",
   "etzj.planb.tbrName":"安安测试",
 	"etzj.planb.tbrMinAge":"18",
-	"etzj.planb.tbrMaxAge":"61",
+	"etzj.planb.tbrMaxAge":"60",
 	"etzj.planb.tbrPhone":"13108130006",
 	"etzj.planb.tbrEmail":"13108130006@zhongan.com",
 	"etzj.planb.bbrName":"安安子女",
@@ -72,7 +72,7 @@
   "zyyl.plana.relation":"本人",
   "zyyl.plana.tbrName":"安安测试",
   "zyyl.plana.tbrMinAge":"18",
-  "zyyl.plana.tbrMaxAge":"51",
+  "zyyl.plana.tbrMaxAge":"50",
   "zyyl.plana.tbrPhone":"13108130007",
   "zyyl.plana.tbrEmail":"13108130007@zhongan.com",
   "zyyl.plana.url":"http://m.zhongan.com:7080/open/product/productDetail450390034"
@@ -82,7 +82,7 @@
   "zyyl.planb.relation":"本人",
   "zyyl.planb.tbrName":"安安测试",
   "zyyl.planb.tbrMinAge":"18",
-  "zyyl.planb.tbrMaxAge":"51",
+  "zyyl.planb.tbrMaxAge":"50",
   "zyyl.planb.tbrPhone":"13108130008",
   "zyyl.planb.tbrEmail":"13108130008@zhongan.com",
   "zyyl.planb.url":"http://m.zhongan.com:7080/open/product/productDetail450390034"
