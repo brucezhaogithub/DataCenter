@@ -8,7 +8,7 @@ import java.util.Random;
 public class CertiUtil {
 
   private int     minAge = 18;
-  private int     maxAge = 60;
+  private int     maxAge = 61;
   private String  gender = "random";
   public  String  birthday = null;
   
@@ -44,7 +44,7 @@ public class CertiUtil {
     
     String certiCode  = null;
     this.minAge       = minAge;
-    this.maxAge       = maxAge + 1;
+    this.maxAge       = maxAge;
     String cityCode   = this.getRandomCityCode();
     String birthCode  = this.getRandomBirthCode();
     String orderCode  = this.getRandomOrderCode();
@@ -59,7 +59,7 @@ public class CertiUtil {
 
     String certiCode  = null;
     this.minAge       = minAge;
-    this.maxAge       = maxAge + 1;
+    this.maxAge       = maxAge;
     this.gender       = gender;
     String cityCode   = this.getRandomCityCode();
     String birthCode  = this.getRandomBirthCode();
