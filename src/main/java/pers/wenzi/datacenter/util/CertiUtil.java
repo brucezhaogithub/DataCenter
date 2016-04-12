@@ -2,6 +2,7 @@ package pers.wenzi.datacenter.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 public class CertiUtil {
@@ -43,7 +44,7 @@ public class CertiUtil {
     
     String certiCode  = null;
     this.minAge       = minAge;
-    this.maxAge       = maxAge;
+    this.maxAge       = maxAge + 1;
     String cityCode   = this.getRandomCityCode();
     String birthCode  = this.getRandomBirthCode();
     String orderCode  = this.getRandomOrderCode();
@@ -58,7 +59,7 @@ public class CertiUtil {
 
     String certiCode  = null;
     this.minAge       = minAge;
-    this.maxAge       = maxAge;
+    this.maxAge       = maxAge + 1;
     this.gender       = gender;
     String cityCode   = this.getRandomCityCode();
     String birthCode  = this.getRandomBirthCode();
@@ -73,43 +74,7 @@ public class CertiUtil {
   private String getRandomCityCode() {
     
     String cityCode = null;
-    // 设定随机省市代码
-    final String cities[] = {
-      // 北京市
-      "110101", "110102", "110105", "110106", "110107", "110108", "110109", "110111",
-      "110112", "110113", "110114", "110115", "110116", "110117",
-      // 上海市
-      "310101", "310104", "310105", "310106", "310107", "310108", "310109", "310110",
-      "310112", "310113", "310114", "310115", "310116", "310117", "310118", "310120",
-      "310130",
-      // 天津市
-      "120101", "120102", "120103", "120104", "120105", "120106", "120110", "120111",
-      "120112", "120113", "120114", "120115", "120116", "120221", "120223", "120225",
-      // 河北省石家庄市
-      "130101", "130102", "130104", "130105", "130107", "130108", "130109", "130110",
-      "130111", "130121", "130123", "130125", "130126", "130127", "130128", "130129",
-      "130130", "130131", "130132",
-      // 山西省太原市
-      "140101", "140105", "140106", "140107", "140108", "140109", "140110", "140121",
-      "140122", "140123",
-      // 内蒙古呼和浩特市
-      "150100", "150101", "150102", "150103", "150104", "150105", "150121", "150122",
-      "150123", "150124", "150125",
-      // 辽宁省沈阳市
-      "210101", "210102", "210103", "210104", "210105", "210106", "210111", "210112",
-      "210113", "210114", "210122", "210123", "210124",
-      // 吉林省长春市
-      "220101", "220102", "220103", "220104", "220105", "220106", "220112", "220113", "220122",
-      "220182", "220183",
-      // 黑龙江省哈尔滨市
-      "230101", "230102", "230103", "230104", "230108", "230109", "230110", "230111", "230112",
-      "230123", "230124", "230125", "230126", "230127", "230128", "230129", "230182", "230183",
-      "230184",
-      // 江苏省南京市
-      "320101", "320102", "320104", "320105", "320106", "320111", 
-      "320113", "320114", "320115", "320116", "320117", "320118"
-    };
-    cityCode = cities[new Random().nextInt(cities.length - 1)];
+    cityCode = TextUtil.cities[new Random().nextInt(TextUtil.cities.length - 1)];
     return cityCode;
     
   }
@@ -117,16 +82,18 @@ public class CertiUtil {
   //随机生成出生年月
   private String getRandomBirthCode() {
     
-    Random random     = new Random();
-    String birthCode  = null;
-    Calendar cal      = Calendar.getInstance();
-    int minYear       = cal.get(Calendar.YEAR) - maxAge;
-    int maxYear       = cal.get(Calendar.YEAR) - minAge;
-    int Year          = random.nextInt(maxYear) % (maxYear - minYear + 1) + minYear;
-    int Month         = random.nextInt(12);
-    int Date          = random.nextInt(28);
-    cal.set(Year, Month, Date);
-    birthCode = new SimpleDateFormat("yyyyMMdd").format(cal.getTime());
+    Random    random    = new Random();
+    String    birthCode = null;
+    Calendar  minDate   = Calendar.getInstance();
+    Calendar  maxDate   = Calendar.getInstance();
+    minDate.setTime(new Date());
+    maxDate.setTime(new Date());
+    minDate.add(Calendar.YEAR, -maxAge);
+    maxDate.add(Calendar.YEAR, -minAge);
+    int diff = random.nextInt((int)((maxDate.getTimeInMillis() - minDate.getTimeInMillis())
+        / (24 * 60 * 60 * 1000)) +1 );
+    minDate.add(Calendar.DATE, diff);
+    birthCode = new SimpleDateFormat("yyyyMMdd").format(minDate.getTime());
     return birthCode;
     
   }

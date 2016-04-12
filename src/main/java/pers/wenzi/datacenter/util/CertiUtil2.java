@@ -10,7 +10,6 @@ public class CertiUtil2 {
   private String minAge = "18";
   private String maxAge = "60";
   private String gender = "random";
-//  private String birthday = null;
   
   //获得随机身份证号码
   public String getRandomCertiCode() {

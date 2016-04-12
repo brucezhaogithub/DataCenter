@@ -311,21 +311,18 @@ public class GetData {
   }
   
   /*
-   * 投保人数据生成
-   * @param minAge
-   * @param maxAge
-   * @param gender
+   * 随机生成身份证号码
+   * 与投保人关系：本人
+   * 年龄：18-60周岁
+   * 性别：男、女
    */
-  @RequestMapping(value="/tbr")
-  public String GetDataTbr(Map<String, String> model,
-      @RequestParam(value="minAge", required=false, defaultValue="18") String minAge,
-      @RequestParam(value="maxAge", required=false, defaultValue="60") String maxAge,
-      @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
+  @RequestMapping(value="/random")
+  public String GetDataTbr(Map<String, String> model) {
     
     model.put("title",    "投保人数据生成");
     model.put("relation", "本人");
     model.put("tbrName",  "安安测试");
-    model.put("tbrCerti", certi2.getRandomCertiCode(minAge, maxAge, gender));
+    model.put("tbrCerti", certi.getRandomCertiCode());
     model.put("tbrPhone", "13108130001");
     model.put("tbrEmail", "13108130001@zhongan.com");
     return "getdata";
