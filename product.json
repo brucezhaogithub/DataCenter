@@ -30,11 +30,11 @@
   "yhds.planc.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
   },
 "product":{
-    "nxjb.title":"女性特定疾病保险",
+  "nxjb.title":"女性特定疾病保险",
 	"nxjb.relation":"本人",
-    "nxjb.tbrName":"安安测试",
+  "nxjb.tbrName":"安安测试",
 	"nxjb.tbrMinAge":"18",
-	"nxjb.tbrMaxAge":"45",
+	"nxjb.tbrMaxAge":"18",
 	"nxjb.tbrPhone":"13108130004",
 	"nxjb.tbrEmail":"13108130004@zhongan.com",
 	"nxjb.url":"http://www.zhongan.com:6080/channel/product/productDetail_100002.html"

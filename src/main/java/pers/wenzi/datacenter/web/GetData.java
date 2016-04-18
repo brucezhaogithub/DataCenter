@@ -311,20 +311,49 @@ public class GetData {
   }
   
   /*
-   * 随机生成身份证号码
+   * 根据指定年龄范围生成投被保人身份证号码
    * 与投保人关系：本人
-   * 年龄：18-60周岁
-   * 性别：男、女
+   * 投被保人年龄：minAge：最小年龄, maxAge：最大年龄
+   * 投被保人性别：gender: 默认random, female:女性身份证
    */
   @RequestMapping(value="/random")
-  public String GetDataTbr(Map<String, String> model) {
+  public String GetDataTbr(Map<String, String> model,
+      @RequestParam(value="minAge", required=false, defaultValue="18") int minAge,
+      @RequestParam(value="maxAge", required=false, defaultValue="60") int maxAge,
+      @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
     
     model.put("title",    "投保人数据生成");
     model.put("relation", "本人");
     model.put("tbrName",  "安安测试");
-    model.put("tbrCerti", certi.getRandomCertiCode());
+    model.put("tbrCerti", certi.getRandomCertiCode(minAge, maxAge, gender));
     model.put("tbrPhone", "13108130001");
     model.put("tbrEmail", "13108130001@zhongan.com");
+    return "getdata";
+    
+  }
+  
+  /*
+   * 根据指定年龄范围生成被保人身份证号码
+   * 与投保人关系：配偶、子女、父母、其他
+   * 投保人年龄：18-60周岁
+   * 被保人年龄：minAge：最小年龄, maxAge：最大年龄
+   * 被保人性别：gender: 默认random, female:女性身份证
+   */
+  @RequestMapping(value="/randombbr")
+  public String GetDataForAge(Map<String, String> model,
+      @RequestParam(value="minAge", required=false, defaultValue="18") int minAge,
+      @RequestParam(value="maxAge", required=false, defaultValue="60") int maxAge,
+      @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
+    
+    model.put("title",    "投保人数据生成");
+    model.put("relation", "本人");
+    model.put("tbrName",  "安安测试");
+    model.put("tbrCerti", certi.getRandomCertiCode(18, 60));
+    model.put("tbrPhone", "13108130001");
+    model.put("tbrEmail", "13108130001@zhongan.com");
+    model.put("bbrName",  "安安被保人");
+    model.put("bbrCerti", certi.getRandomCertiCode(minAge, maxAge, gender));
+    model.put("bbrPhone", "13108130001");
     return "getdata";
     
   }
