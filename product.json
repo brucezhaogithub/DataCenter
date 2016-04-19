@@ -1,33 +1,13 @@
 {
 "product":{
-  "yhds.plana.title":"银行卡盗刷资金损失保险-经典版",
-  "yhds.plana.relation":"本人",
-  "yhds.plana.tbrName":"安安测试",
-  "yhds.plana.tbrMinAge":"18",
-  "yhds.plana.tbrMaxAge":"60",
-  "yhds.plana.tbrPhone":"13108130001",
-  "yhds.plana.tbrEmail":"13108130001@zhongan.com",
-  "yhds.plana.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
-  },
-"product":{
-  "yhds.planb.title":"银行卡盗刷资金损失保险-尊享版",
-  "yhds.planb.relation":"本人",
-  "yhds.planb.tbrName":"安安测试",
-  "yhds.planb.tbrMinAge":"18",
-  "yhds.planb.tbrMaxAge":"60",
-  "yhds.planb.tbrPhone":"13108130002",
-  "yhds.planb.tbrEmail":"13108130002@zhongan.com",
-  "yhds.planb.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
-  },
-"product":{
-  "yhds.planc.title":"银行卡盗刷资金损失保险-土豪版",
-  "yhds.planc.relation":"本人",
-  "yhds.planc.tbrName":"安安测试",
-  "yhds.planc.tbrMinAge":"18",
-  "yhds.planc.tbrMaxAge":"60",
-  "yhds.planc.tbrPhone":"13108130003",
-  "yhds.planc.tbrEmail":"13108130003@zhongan.com",
-  "yhds.planc.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
+  "yhds.title":"银行卡盗刷资金损失保险-经典版",
+  "yhds.relation":"本人",
+  "yhds.tbrName":"安安测试",
+  "yhds.tbrMinAge":"18",
+  "yhds.tbrMaxAge":"60",
+  "yhds.tbrPhone":"13108130001",
+  "yhds.tbrEmail":"13108130001@zhongan.com",
+  "yhds.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
   },
 "product":{
   "nxjb.title":"女性特定疾病保险",

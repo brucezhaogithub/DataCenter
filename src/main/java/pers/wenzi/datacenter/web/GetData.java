@@ -14,7 +14,7 @@ import pers.wenzi.datacenter.util.InsuredUtil;
 
 /**
  * 所有产品数据初始化  
- * 
+ * @author liwenhuan
  */
 
 @Controller
@@ -28,66 +28,21 @@ public class GetData {
   
   /*
    * 银行卡盗刷资金损失保险
-   * 产品版型：经典版
    * 与投保人关系：本人
    */
-  @RequestMapping(value="/yhds/plana")
+  @RequestMapping(value="/yhds")
   public String GetDataForYhdsPlana(Map<String, String> model) {
     
-    model.put("title",    insured.getValue("yhds.plana.title"));
-    model.put("relation", insured.getValue("yhds.plana.relation"));
-    model.put("tbrName",  insured.getValue("yhds.plana.tbrName"));
+    model.put("title",    insured.getValue("yhds.title"));
+    model.put("relation", insured.getValue("yhds.relation"));
+    model.put("tbrName",  insured.getValue("yhds.tbrName"));
     model.put("tbrCerti", certi.getRandomCertiCode(
-                          Integer.valueOf(insured.getValue("yhds.plana.tbrMinAge")), 
-                          Integer.valueOf(insured.getValue("yhds.plana.tbrMaxAge"))));
-    model.put("tbrPhone", insured.getValue("yhds.plana.tbrPhone"));
-    model.put("tbrEmail", insured.getValue("yhds.plana.tbrEmail"));
-    model.put("url",      insured.getValue("yhds.plana.url"));
-    logger.info("银行卡盗刷资金损失保险-经典版-数据获取完成");
-    return "getdata";
-    
-  }
-  
-  /*
-   * 银行卡盗刷资金损失保险
-   * 产品版型：尊享版
-   * 与投保人关系：本人
-   */
-  @RequestMapping(value="/yhds/planb")
-  public String GetDataForYhdsPlanb(Map<String, String> model) {
-    
-    model.put("title",    insured.getValue("yhds.planb.title"));
-    model.put("relation", insured.getValue("yhds.planb.relation"));
-    model.put("tbrName",  insured.getValue("yhds.planb.tbrName"));
-    model.put("tbrCerti", certi.getRandomCertiCode(
-                          Integer.valueOf(insured.getValue("yhds.planb.tbrMinAge")), 
-                          Integer.valueOf(insured.getValue("yhds.planb.tbrMaxAge"))));
-    model.put("tbrPhone", insured.getValue("yhds.planb.tbrPhone"));
-    model.put("tbrEmail", insured.getValue("yhds.planb.tbrEmail"));
-    model.put("url",      insured.getValue("yhds.planb.url"));
-    logger.info("银行卡盗刷资金损失保险-尊享版-数据获取完成");
-    return "getdata";
-    
-  }
-  
-  /*
-   * 银行卡盗刷资金损失保险
-   * 产品版型：土豪版
-   * 与投保人关系：本人
-   */
-  @RequestMapping(value="/yhds/planc")
-  public String GetDataForYhdsPlanc(Map<String, String> model) {
-    
-    model.put("title",    insured.getValue("yhds.planc.title"));
-    model.put("relation", insured.getValue("yhds.planc.relation"));
-    model.put("tbrName",  insured.getValue("yhds.planc.tbrName"));
-    model.put("tbrCerti", certi.getRandomCertiCode(
-                          Integer.valueOf(insured.getValue("yhds.planc.tbrMinAge")), 
-                          Integer.valueOf(insured.getValue("yhds.planc.tbrMaxAge"))));
-    model.put("tbrPhone", insured.getValue("yhds.planc.tbrPhone"));
-    model.put("tbrEmail", insured.getValue("yhds.planc.tbrEmail"));
-    model.put("url",      insured.getValue("yhds.planc.url"));
-    logger.info("银行卡盗刷资金损失保险-土豪版-数据获取完成");
+                          Integer.valueOf(insured.getValue("yhds.tbrMinAge")), 
+                          Integer.valueOf(insured.getValue("yhds.tbrMaxAge"))));
+    model.put("tbrPhone", insured.getValue("yhds.tbrPhone"));
+    model.put("tbrEmail", insured.getValue("yhds.tbrEmail"));
+    model.put("url",      insured.getValue("yhds.url"));
+    logger.info("银行卡盗刷资金损失保险, 数据获取完成");
     return "getdata";
     
   }
@@ -317,7 +272,7 @@ public class GetData {
    * 投被保人性别：gender: 默认random, female:女性身份证
    */
   @RequestMapping(value="/random")
-  public String GetDataTbr(Map<String, String> model,
+  public String GetTbr(Map<String, String> model,
       @RequestParam(value="minAge", required=false, defaultValue="18") int minAge,
       @RequestParam(value="maxAge", required=false, defaultValue="60") int maxAge,
       @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
@@ -339,8 +294,8 @@ public class GetData {
    * 被保人年龄：minAge：最小年龄, maxAge：最大年龄
    * 被保人性别：gender: 默认random, female:女性身份证
    */
-  @RequestMapping(value="/randombbr")
-  public String GetDataForAge(Map<String, String> model,
+  @RequestMapping(value="/random/bbr")
+  public String GetBbr(Map<String, String> model,
       @RequestParam(value="minAge", required=false, defaultValue="18") int minAge,
       @RequestParam(value="maxAge", required=false, defaultValue="60") int maxAge,
       @RequestParam(value="gender", required=false, defaultValue="random") String gender) {

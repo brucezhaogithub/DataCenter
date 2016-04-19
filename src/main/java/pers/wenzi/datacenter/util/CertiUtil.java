@@ -70,21 +70,6 @@ public class CertiUtil {
 
   }
   
-  // 获得最小年龄(包含天)至最大年龄（包含天）范围内指定性别的随机身份证号码
-  public String getRandomCertiCode(int minDay, int maxDay, int minAge, int maxAge, String gender) {
-    
-    String certiCode  = null;
-    this.minAge       = minAge;
-    this.maxAge       = maxAge + 1;
-    String cityCode   = this.getRandomCityCode();
-    String birthCode  = this.getRandomBirthCode();
-    String orderCode  = this.getRandomOrderCode();
-    String checkCode  = this.getCheckCode(cityCode, birthCode, orderCode);
-    certiCode         = cityCode + birthCode + orderCode + checkCode;
-    return certiCode;
-    
-  }
-  
   //随机生成省市代码
   private String getRandomCityCode() {
     
