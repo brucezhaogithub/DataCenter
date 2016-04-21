@@ -5,16 +5,26 @@
     </head>
     <body>
         <!-- Velocity基本语法 http://pengenjing.iteye.com/blog/1829229 -->
+        #if($relation)
         <span>与投保人关系：</span>
         <span>$relation</span><br />
+        #end
+        #if($tbrName)
         <span>投保人姓名：</span>
         <span>$tbrName</span><br />
+        #end
+        #if($tbrCerti)
         <span>投保人证件号码：</span>
         <span>$tbrCerti</span><br />
+        #end
+        #if($tbrPhone)
         <span>投保人手机号码：</span>
         <span>$tbrPhone</span><br />
+        #end
+        #if($tbrEmail)
         <span>投保人邮箱地址：</span>
         <span>$tbrEmail</span><br />
+        #end
         #if($bbrCerti)
         <span>被保人证件号码：</span>
         <span>$bbrCerti</span><br />
