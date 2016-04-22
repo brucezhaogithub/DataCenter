@@ -266,7 +266,7 @@ public class GetData {
   }
   
   /*
-   * 根据指定年龄和性别生成投被保人身份证号码
+   * 根据指定年龄和性别生成身份证号码
    * @param minAge
    * @param maxAge
    * @param gender
@@ -279,6 +279,7 @@ public class GetData {
     
     model.put("title", "身份证号码随机获取");
     model.put("certi", certi.getRandomCertiCode(minAge, maxAge, gender));
+    logger.info("身份证号码生成成功");
     return "getdata";
     
   }
