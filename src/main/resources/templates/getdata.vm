@@ -41,5 +41,9 @@
         <span>投保链接：</span>
         <span><a href="$url">点击投保</a></span>
         #end
+        #if($certi)
+        <span>证件号码：</span>
+        <span>$certi</span>
+        #end
     </body>
 </html>

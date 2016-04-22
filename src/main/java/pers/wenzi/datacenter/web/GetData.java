@@ -271,14 +271,14 @@ public class GetData {
    * @param maxAge
    * @param gender
    */
-  @RequestMapping(value="/tbr")
+  @RequestMapping(value="/certi")
   public String GetTbr(Map<String, String> model,
       @RequestParam(value="minAge", required=false, defaultValue="18") int minAge,
       @RequestParam(value="maxAge", required=false, defaultValue="60") int maxAge,
       @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
     
-    model.put("title",    "投保人数据生成");
-    model.put("tbrCerti", certi.getRandomCertiCode(minAge, maxAge, gender));
+    model.put("title", "身份证号码随机获取");
+    model.put("certi", certi.getRandomCertiCode(minAge, maxAge, gender));
     return "getdata";
     
   }
