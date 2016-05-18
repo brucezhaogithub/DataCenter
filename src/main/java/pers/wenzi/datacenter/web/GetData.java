@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pers.wenzi.datacenter.util.CertiUtil;
-import pers.wenzi.datacenter.util.CertiUtil2;
 import pers.wenzi.datacenter.util.InsuredUtil;
 
 /**
@@ -24,7 +23,6 @@ public class GetData {
   private final static Logger logger = LoggerFactory.getLogger(GetData.class);
   InsuredUtil insured = new InsuredUtil();  // 初始化投被保人脚本数据
   CertiUtil   certi   = new CertiUtil();    // 初始化身份证号生成工具
-  CertiUtil2  certi2  = new CertiUtil2();
   
   /*
    * 银行卡盗刷资金损失保险

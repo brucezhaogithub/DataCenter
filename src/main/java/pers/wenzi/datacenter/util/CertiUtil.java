@@ -70,6 +70,8 @@ public class CertiUtil {
 
   }
   
+  
+  
   //随机生成省市代码
   private String getRandomCityCode() {
     
