@@ -1,13 +1,8 @@
 {
 "product":{
-  "yhds.title":"银行卡盗刷资金损失保险-经典版",
-  "yhds.relation":"本人",
-  "yhds.tbrName":"安安测试",
-  "yhds.tbrMinAge":"18",
-  "yhds.tbrMaxAge":"60",
-  "yhds.tbrPhone":"13108130001",
-  "yhds.tbrEmail":"13108130001@zhongan.com",
-  "yhds.url":"http://www.zhongan.com:6080/channel/product/productDetail_40015048.html"
+  "yhds.plana.productId":"1300190003",
+  "yhds.plana.packageDefId":"50170003",
+  "yhds.plana.campaignDefId":"1000260008"
   },
 "product":{
   "nxjb.title":"女性特定疾病保险",

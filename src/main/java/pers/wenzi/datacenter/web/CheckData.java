@@ -8,14 +8,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import pers.wenzi.datacenter.asserts.PolicyAssert;
 import pers.wenzi.datacenter.model.Policy;
 import pers.wenzi.datacenter.service.PolicyService;
+import pers.wenzi.datacenter.util.InsuredUtil;
 
 @Controller
 @RequestMapping(value="/checkdata")
 public class CheckData {
   
   Policy policy;
+  InsuredUtil   insured = new InsuredUtil();
   
   @Autowired
   private PolicyService policyService;
@@ -26,9 +29,13 @@ public class CheckData {
     
     policy = policyService.selectPolicy(policyNo);
     model.put("policyNo",       policyNo);
-    model.put("productId",      policy.getProductId());
-    model.put("packageDefId",   policy.getPackageDefId());
-    model.put("campaignDefId",  policy.getCampaignDefId());
+    model.put("productId", PolicyAssert.AssertToString(
+            "产品版型校验", policy.getProductId(), insured.getValue("yhds.plana.productId")));
+    model.put("packageDefId", PolicyAssert.AssertToString(
+            "产品组合校验", policy.getPackageDefId(), insured.getValue("yhds.plana.packageDefId")));
+    model.put("campaignDefId", PolicyAssert.AssertToString(
+            "营销渠道校验", policy.getCampaignDefId(), insured.getValue("yhds.plana.campaignDefId")));
+    
     return "checkdata";
     
   }
