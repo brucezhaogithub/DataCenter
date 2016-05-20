@@ -1,9 +1,9 @@
 package pers.wenzi.datacenter.dao;
 
-import pers.wenzi.datacenter.model.Policy;
+import pers.wenzi.datacenter.model.Actual;
 
 public interface PolicyDao {
   
-  public Policy selectPolicy(String policyNo);
+  public Actual selectPolicy(String policyNo);
   
 }
