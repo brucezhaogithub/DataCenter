@@ -136,7 +136,7 @@ public class CertiUtil {
       int maxAge = Integer.valueOf(strMaxAge.substring(0, maxAgeTag));
       minDate.add(Calendar.DATE, -maxAge);
     }else {
-      int maxAge = Integer.valueOf(strMaxAge);
+      int maxAge = Integer.valueOf(strMaxAge) + 1;
       minDate.add(Calendar.YEAR, -maxAge);
     }
     int diff = random.nextInt((int)((maxDate.getTimeInMillis() - minDate.getTimeInMillis()) 
