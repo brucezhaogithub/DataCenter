@@ -2,7 +2,9 @@
 "product":{
   "yhds.plana.productId":"1300190003",
   "yhds.plana.packageDefId":"50170003",
-  "yhds.plana.campaignDefId":"1000260008"
+  "yhds.plana.campaignDefId":"1000260008",
+  "yhds.plana.premium":"20",
+  "yhds.plana.sumInsured":"50000"
   },
 "product":{
   "nxjb.title":"女性特定疾病保险",
