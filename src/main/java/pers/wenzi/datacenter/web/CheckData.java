@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import pers.wenzi.datacenter.asserts.PolicyAssert;
 import pers.wenzi.datacenter.model.Except;
-import pers.wenzi.datacenter.model.Actual;
+import pers.wenzi.datacenter.model.Policy;
 import pers.wenzi.datacenter.service.PolicyService;
 
 @Controller
 @RequestMapping(value="/checkdata")
 public class CheckData {
   
-  Actual actual = new Actual();
+  Policy policy = new Policy();
   Except except = new Except();
   
   @Autowired
@@ -27,14 +27,14 @@ public class CheckData {
   public String checkYhdsPlana(Map<String, String> model,
       @PathVariable("policyNo") String policyNo) {
     
-    actual = policyService.selectPolicy(policyNo);
+    policy = policyService.selectPolicy(policyNo);
     model.put("policyNo",       policyNo);
     model.put("productId", PolicyAssert.AssertToString(
-            "产品版型校验", actual.getProductId(), except.getValue("yhds.plana.productId")));
+            "产品版型校验", policy.getProductId(), except.getValue("yhds.plana.productId")));
     model.put("packageDefId", PolicyAssert.AssertToString(
-            "产品组合校验", actual.getPackageDefId(), except.getValue("yhds.plana.packageDefId")));
+            "产品组合校验", policy.getPackageDefId(), except.getValue("yhds.plana.packageDefId")));
     model.put("campaignDefId", PolicyAssert.AssertToString(
-            "营销渠道校验", actual.getCampaignDefId(), except.getValue("yhds.plana.campaignDefId")));
+            "营销渠道校验", policy.getCampaignDefId(), except.getValue("yhds.plana.campaignDefId")));
     
     return "checkdata";
     
@@ -45,11 +45,11 @@ public class CheckData {
   public String checkNXJB(Map<String, String> map, 
       @PathVariable("policyNo") String policyNo) {
     
-    actual = policyService.selectPolicy(policyNo);
+    policy = policyService.selectPolicy(policyNo);
     map.put("policyNo",       policyNo);
-    map.put("productId",      actual.getProductId());
-    map.put("packageDefId",   actual.getPackageDefId());
-    map.put("campaignDefId",  actual.getCampaignDefId());
+    map.put("productId",      policy.getProductId());
+    map.put("packageDefId",   policy.getPackageDefId());
+    map.put("campaignDefId",  policy.getCampaignDefId());
     return "checkdata";
     
   }

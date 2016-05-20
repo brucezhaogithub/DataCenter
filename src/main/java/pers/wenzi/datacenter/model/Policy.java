@@ -1,6 +1,6 @@
 package pers.wenzi.datacenter.model;
 
-public class Actual {
+public class Policy {
   
   private int policyId;
   private String policyNo;

@@ -1,9 +1,9 @@
 package pers.wenzi.datacenter.service;
 
-import pers.wenzi.datacenter.model.Actual;
+import pers.wenzi.datacenter.model.Policy;
 
 public interface PolicyService {
   
-  public Actual selectPolicy(String policyNo);
+  public Policy selectPolicy(String policyNo);
   
 }
