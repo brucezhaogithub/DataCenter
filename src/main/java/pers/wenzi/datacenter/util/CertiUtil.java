@@ -8,7 +8,9 @@ import java.util.Random;
 public class CertiUtil {
 
   private int     minAge = 18;
-  private int     maxAge = 61;
+  private int     maxAge = 60;
+  private String  strMinAge = "18";
+  private String  strMaxAge = "60";
   private String  gender = "random";
   public  String  birthday = null;
   
@@ -70,7 +72,20 @@ public class CertiUtil {
 
   }
   
-  
+  public String getRandomCertiCode2(String strMinAge, String strMaxAge, String gender) {
+    
+    String certiCode  = null;
+    this.strMinAge    = strMinAge;
+    this.strMaxAge    = strMaxAge;
+    this.gender       = gender;
+    String cityCode   = this.getRandomCityCode();
+    String birthCode  = this.getRandomBirthCode2();
+    String orderCode  = this.getRandomOrderCode();
+    String checkCode  = this.getCheckCode(cityCode, birthCode, orderCode);
+    certiCode         = cityCode + birthCode + orderCode + checkCode;
+    return certiCode;
+    
+  }
   
   //随机生成省市代码
   private String getRandomCityCode() {
@@ -94,6 +109,38 @@ public class CertiUtil {
     maxDate.add(Calendar.YEAR, -minAge);
     int diff = random.nextInt((int)((maxDate.getTimeInMillis() - minDate.getTimeInMillis())
         / (24 * 60 * 60 * 1000)) +1 );
+    minDate.add(Calendar.DATE, diff);
+    birthCode = new SimpleDateFormat("yyyyMMdd").format(minDate.getTime());
+    return birthCode;
+    
+  }
+  
+  private String getRandomBirthCode2() {
+    
+    String  birthCode = null;
+    Random  random    = new Random();
+    Calendar maxDate = Calendar.getInstance();
+    Calendar minDate = Calendar.getInstance();
+    minDate.setTime(new Date());
+    maxDate.setTime(new Date());
+    int     minAgeTag = strMinAge.indexOf("d");
+    if (minAgeTag > 0) {
+      int minAge = Integer.valueOf(strMinAge.substring(0, minAgeTag));
+      maxDate.add(Calendar.DATE, -minAge);
+    }else {
+      int minAge = Integer.valueOf(strMinAge);
+      maxDate.add(Calendar.YEAR, -minAge);
+    }
+    int     maxAgeTag = strMaxAge.indexOf("d");
+    if (maxAgeTag > 0) {
+      int maxAge = Integer.valueOf(strMaxAge.substring(0, maxAgeTag));
+      minDate.add(Calendar.DATE, -maxAge);
+    }else {
+      int maxAge = Integer.valueOf(strMaxAge);
+      minDate.add(Calendar.YEAR, -maxAge);
+    }
+    int diff = random.nextInt((int)((maxDate.getTimeInMillis() - minDate.getTimeInMillis()) 
+        / (24 * 60 * 60 * 1000)) + 1 );
     minDate.add(Calendar.DATE, diff);
     birthCode = new SimpleDateFormat("yyyyMMdd").format(minDate.getTime());
     return birthCode;

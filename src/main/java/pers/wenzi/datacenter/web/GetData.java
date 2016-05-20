@@ -300,4 +300,16 @@ public class GetData {
     
   }
   
+  @RequestMapping(value="certi2")
+  public String GetCerti2(Map<String, String> model,
+      @RequestParam(value="minAge", required=false, defaultValue="18") String minAge,
+      @RequestParam(value="maxAge", required=false, defaultValue="60") String maxAge,
+      @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
+    
+    model.put("title", "试验带日期方法");
+    model.put("certi", certi.getRandomCertiCode2(minAge, maxAge, gender));
+    logger.info("身份证号码生成成功");
+    return "getdata";
+  }
+  
 }
