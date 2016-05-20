@@ -5,10 +5,28 @@
     <title>保单校验</title>
   </head>
   <body>
-    <form action="" method="post">
-      PolicyNo:
-      <input type="text" name="policyNo" id="policyNo" /><br />
-      
+    <form action="/checkdata/checkpolicy" method="post">
+      <table border="0">
+        <tr>
+          <td>产品版型 ProductId:</td>
+          <td><input type="text" name="productId" id="productId" /></td>
+        </tr>
+        <tr>
+          <td>产品组合 PackageDefId:</td>
+          <td><input type="text" name="packageDefId" id="packageDefId" /></td>
+        </tr>
+        <tr>
+          <td>营销渠道 CampaignDefId:</td>
+          <td><input type="text" name="campaignDefId" id="campaignDefId" /></td>
+        </tr>
+        <tr>
+          <td>保单号 PolicyNo:</td>
+          <td><input type="text" name="policyNo" id="policyNo" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="Check" /></td>
+        </tr>
+      </table>
     </form>
   </body>
 </html>
