@@ -29,11 +29,11 @@ public class CheckData {
     
     policy = policyService.selectPolicy(policyNo);
     model.put("policyNo",       policyNo);
-    model.put("productId", PolicyAssert.AssertToString(
+    model.put("productId",      PolicyAssert.AssertToString(
             "产品版型校验", policy.getProductId(), except.getValue("yhds.plana.productId")));
-    model.put("packageDefId", PolicyAssert.AssertToString(
+    model.put("packageDefId",   PolicyAssert.AssertToString(
             "产品组合校验", policy.getPackageDefId(), except.getValue("yhds.plana.packageDefId")));
-    model.put("campaignDefId", PolicyAssert.AssertToString(
+    model.put("campaignDefId",  PolicyAssert.AssertToString(
             "营销渠道校验", policy.getCampaignDefId(), except.getValue("yhds.plana.campaignDefId")));
     
     return "checkdata";
