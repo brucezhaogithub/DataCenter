@@ -282,24 +282,6 @@ public class GetData {
     
   }
   
-  /*
-   * 根据指定年龄和性别生成被保人身份证号码
-   * @param minAge
-   * @param maxAge
-   * @param gender
-   */
-  @RequestMapping(value="/bbr")
-  public String GetBbr(Map<String, String> model,
-      @RequestParam(value="minAge", required=false, defaultValue="18") int minAge,
-      @RequestParam(value="maxAge", required=false, defaultValue="60") int maxAge,
-      @RequestParam(value="gender", required=false, defaultValue="random") String gender) {
-    
-    model.put("title",    "被保人数据生成");
-    model.put("bbrCerti", certi.getRandomCertiCode(minAge, maxAge, gender));
-    return "getdata";
-    
-  }
-  
   @RequestMapping(value="certi2")
   public String GetCerti2(Map<String, String> model,
       @RequestParam(value="minAge", required=false, defaultValue="18") String minAge,
