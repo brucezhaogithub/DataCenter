@@ -44,7 +44,9 @@
         #end
         #if($certi)
         <span>证件号码：</span>
-        <span>$certi</span>
+        <span>$certi</span><br />
+        <span>明日日期：</span>
+        <span>$date</span>
         #end
     </body>
 </html>
