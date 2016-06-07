@@ -53,6 +53,7 @@ public class GetData {
     model.put("certi", certi.getRandomCertiCode2(minAge, maxAge, gender));
     logger.info("身份证号码生成成功");
     return "getdata";
+    
   }
   
 }
