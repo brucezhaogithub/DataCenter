@@ -73,7 +73,7 @@ public class CertiUtil2 {
   private String getRandomCityCode() {
     
     String cityCode = null;
-    cityCode = TextUtil.cities[new Random().nextInt(TextUtil.cities.length - 1)];
+    cityCode = TextUtil.cities[new Random().nextInt(TextUtil.cities.length)];
     return cityCode;
     
   }
